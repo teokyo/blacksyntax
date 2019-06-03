@@ -19,7 +19,7 @@ class Newsletter extends Component {
         
                                 {/* Newsletter Title */}
                                 <div className="newsletter_title">
-                                    <h1>Subscribe to our newsletter</h1>
+                                    <h1>Suscribete</h1>
                                     <span>Cursus, enim a ultrices venenatis, ante magna varius.</span>
                                 </div>
                                 
@@ -29,7 +29,7 @@ class Newsletter extends Component {
                                         <div className="input-group">
                                             <input type="email" className="newsletter_email" placeholder="Your e-mail address here" required="required" data-error="Valid email address is required."/>
                                             <button id="newsletter_form_submit" type="submit" className="button newsletter_submit_button trans_200" value="Submit">
-                                                subscribe
+                                                Enviar
                                             </button>
                                         </div>
                                             

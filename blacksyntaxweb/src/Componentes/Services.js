@@ -16,8 +16,8 @@ class Services extends Component {
                     <div className="row">
                         <div className="col text-center">
                             <div className="section_title">
-                                <h1>RanGO. We take care of your business</h1>
-                                <span>Explore our services</span>
+                                <h1>BlackSyntax Servicios</h1>
+                                <span>Explora tus servicios</span>
                             </div>
                         </div>
                     </div>
@@ -54,9 +54,9 @@ class Services extends Component {
                                             <div className="service_item_icon">
                                                 <div data-icon="&#xe059;" className="icon"></div>
                                             </div>
-                                            <h2>Management</h2>
+                                            <h2>Servicio 1</h2>
                                         </div>
-                                        <p>Odio vestibulum est mattis effic iturut magna. Pellente sque sit am et tellus blandit. Etiam nec odio vesti bul.</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor</p>
                                         <div className="button service_item_button trans_200">
                                             <a href="#" className="trans_200">discover more</a>
                                         </div>
@@ -72,9 +72,9 @@ class Services extends Component {
                                             <div className="service_item_icon">
                                                 <div data-icon="&#xe024;" className="icon"></div>
                                             </div>
-                                            <h2>Risk Evaluation</h2>
+                                            <h2>Servicio 2</h2>
                                         </div>
-                                        <p>Odio vestibulum est mattis effic iturut magna. Pellente sque sit am et tellus blandit. Etiam nec odio vesti bul.</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor</p>
                                         <div className="button service_item_button trans_200">
                                             <a href="#" className="trans_200">discover more</a>
                                         </div>
@@ -90,9 +90,9 @@ class Services extends Component {
                                             <div className="service_item_icon">
                                                 <div data-icon="&#xe05e;" className="icon"></div>
                                             </div>
-                                            <h2>Assesment</h2>
+                                            <h2>Servicio 3</h2>
                                         </div>
-                                        <p>Etiam nec odio vestibulum est mattis effic iturut magna. Pel lentesque sit am et tellus bla ndit. Etiam nec odio vestibul.</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor</p>
                                         <div className="button service_item_button trans_200">
                                             <a href="#" className="trans_200">discover more</a>
                                         </div>
@@ -108,9 +108,9 @@ class Services extends Component {
                                             <div className="service_item_icon">
                                                 <div data-icon="&#xe059;" className="icon"></div>
                                             </div>
-                                            <h2>Great team</h2>
+                                            <h2>Servicio 4</h2>
                                         </div>
-                                        <p>Etiam nec odio vestibulum est mattis effic iturut magna. Pel lentesque sit am et tellus bla ndit. Etiam nec odio vestibul.</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor</p>
                                         <div className="button service_item_button trans_200">
                                             <a href="#" className="trans_200">discover more</a>
                                         </div>
@@ -119,40 +119,7 @@ class Services extends Component {
                             </div>
         
                             {/* Services Slider Ite */}
-                            <div className="owl-item services_item">
-                                <div className="services_item_inner">
-                                    <div className="service_item_content">
-                                        <div className="service_item_title">
-                                            <div className="service_item_icon">
-                                                <div data-icon="&#xe040;" className="icon"></div>
-                                            </div>
-                                            <h2>Amazing service</h2>
-                                        </div>
-                                        <p>Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit am et tellus blandit. Etiam nec odio vesti bul mattis effic iturut magna.</p>
-                                        <div className="button service_item_button trans_200">
-                                            <a href="#" className="trans_200">discover more</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-        
-                            {/* Services Slider Ite */}
-                            <div className="owl-item services_item">
-                                <div className="services_item_inner">
-                                    <div className="service_item_content">
-                                        <div className="service_item_title">
-                                            <div className="service_item_icon">
-                                                <div data-icon="&#xe020;" className="icon"></div>
-                                            </div>
-                                            <h2>Amazing service</h2>
-                                        </div>
-                                        <p>Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit am et tellus blandit. Etiam nec odio vesti bul mattis effic iturut magna.</p>
-                                        <div className="button service_item_button trans_200">
-                                            <a href="#" className="trans_200">discover more</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
         
                         </div>
                     
