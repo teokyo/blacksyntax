@@ -19,6 +19,21 @@ class Home extends Component {
             imagen: imagen,
             Titulo: 'Titulo 3',
             Subtitulo: 'Subtitulo 3'
+        },
+        {
+            imagen: imagen,
+            Titulo: 'Titulo 2',
+            Subtitulo: 'Subtitulo 2'
+        },
+        {
+            imagen: imagen,
+            Titulo: 'Titulo 4',
+            Subtitulo: 'Subtitulo 4'
+        },
+        {
+            imagen: imagen,
+            Titulo: 'Titulo 5',
+            Subtitulo: 'Subtitulo 5'
         }
     ];
     state = {
