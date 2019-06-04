@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import logo from '../logo.svg';
+
+import imagen from '../images/tecnologia.png';
 import '../App.css';
 
 class VerticalSliderSection extends Component {
@@ -19,7 +20,7 @@ class VerticalSliderSection extends Component {
         
                         <div className="col-lg-6 v_slider_section_image">
                             <div className="v_slider_image">
-                                <img src="https://i.pinimg.com/originals/8b/5f/7f/8b5f7f52e0ad4960d496e20f505f78eb.jpg" alt=""/>
+                                <img src={imagen} alt=""/>
                             </div>
                         </div>
         

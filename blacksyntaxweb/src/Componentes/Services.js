@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from '../logo.svg';
 import '../App.css';
 
 class Services extends Component {
@@ -34,13 +33,13 @@ class Services extends Component {
                                     <div className="service_item_content">
                                         <div className="service_item_title">
                                             <div className="service_item_icon">
-                                                <div data-icon="&#xe083;" className="icon"></div>
+                                                <div data-icon="&/holaxe083;" className="icon"></div>
                                             </div>
                                             <h2>Amazing service</h2>
                                         </div>
                                         <p>Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit am et tellus blandit. Etiam nec odio vesti bul mattis effic iturut magna.</p>
                                         <div className="button service_item_button trans_200">
-                                            <a href="#" className="trans_200">discover more</a>
+                                            <a href="/hola" className="trans_200">discover more</a>
                                         </div>
                                     </div>
                                 </div>
@@ -52,13 +51,13 @@ class Services extends Component {
                                     <div className="service_item_content">
                                         <div className="service_item_title">
                                             <div className="service_item_icon">
-                                                <div data-icon="&#xe059;" className="icon"></div>
+                                                <div data-icon="&/holaxe059;" className="icon"></div>
                                             </div>
                                             <h2>Servicio 1</h2>
                                         </div>
                                         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor</p>
                                         <div className="button service_item_button trans_200">
-                                            <a href="#" className="trans_200">discover more</a>
+                                            <a href="/hola" className="trans_200">discover more</a>
                                         </div>
                                     </div>
                                 </div>
@@ -70,13 +69,13 @@ class Services extends Component {
                                     <div className="service_item_content">
                                         <div className="service_item_title">
                                             <div className="service_item_icon">
-                                                <div data-icon="&#xe024;" className="icon"></div>
+                                                <div data-icon="&/holaxe024;" className="icon"></div>
                                             </div>
                                             <h2>Servicio 2</h2>
                                         </div>
                                         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor</p>
                                         <div className="button service_item_button trans_200">
-                                            <a href="#" className="trans_200">discover more</a>
+                                            <a href="/hola" className="trans_200">discover more</a>
                                         </div>
                                     </div>
                                 </div>
@@ -88,13 +87,13 @@ class Services extends Component {
                                     <div className="service_item_content">
                                         <div className="service_item_title">
                                             <div className="service_item_icon">
-                                                <div data-icon="&#xe05e;" className="icon"></div>
+                                                <div data-icon="&/holaxe05e;" className="icon"></div>
                                             </div>
                                             <h2>Servicio 3</h2>
                                         </div>
                                         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor</p>
                                         <div className="button service_item_button trans_200">
-                                            <a href="#" className="trans_200">discover more</a>
+                                            <a href="/hola" className="trans_200">discover more</a>
                                         </div>
                                     </div>
                                 </div>
@@ -106,13 +105,13 @@ class Services extends Component {
                                     <div className="service_item_content">
                                         <div className="service_item_title">
                                             <div className="service_item_icon">
-                                                <div data-icon="&#xe059;" className="icon"></div>
+                                                <div data-icon="&/holaxe059;" className="icon"></div>
                                             </div>
                                             <h2>Servicio 4</h2>
                                         </div>
                                         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor</p>
                                         <div className="button service_item_button trans_200">
-                                            <a href="#" className="trans_200">discover more</a>
+                                            <a href="/hola" className="trans_200">discover more</a>
                                         </div>
                                     </div>
                                 </div>

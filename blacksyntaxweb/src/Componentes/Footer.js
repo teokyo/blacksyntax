@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from '../logo.svg';
 import '../App.css';
 
 class Footer extends Component {
@@ -22,7 +21,7 @@ class Footer extends Component {
         
                                 {/* Logo */}
                                 <div className="logo footer_logo">
-                                    <a href="#">Black<span>Syntax</span></a>
+                                    <a href="/hola">Black<span>Syntax</span></a>
                                 </div>
         
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae enim enim. Sed nec dignissim purus.</p>
@@ -30,12 +29,12 @@ class Footer extends Component {
                                 {/* Social */}
                                 <div className="footer_social">
                                     <ul>
-                                        <li><a href="#"><i className="fab fa-pinterest"></i></a></li>
-                                        <li><a href="#"><i className="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="#"><i className="fab fa-twitter"></i></a></li>
-                                        <li><a href="#"><i className="fab fa-dribbble"></i></a></li>
-                                        <li><a href="#"><i className="fab fa-behance"></i></a></li>
-                                        <li><a href="#"><i className="fab fa-linkedin-in"></i></a></li>
+                                        <li><a href="/hola"><i className="fab fa-pinterest"></i></a></li>
+                                        <li><a href="/hola"><i className="fab fa-facebook-f"></i></a></li>
+                                        <li><a href="/hola"><i className="fab fa-twitter"></i></a></li>
+                                        <li><a href="/hola"><i className="fab fa-dribbble"></i></a></li>
+                                        <li><a href="/hola"><i className="fab fa-behance"></i></a></li>
+                                        <li><a href="/hola"><i className="fab fa-linkedin-in"></i></a></li>
                                     </ul>
                                 </div>
                                 
@@ -52,14 +51,14 @@ class Footer extends Component {
                             <div className="footer_col">
                                 <div className="footer_col_title">Servicio</div>
                                 <ul>
-                                    <li><a href="#">Social media</a></li>
+                                    <li><a href="/hola">Social media</a></li>
                                 </ul>
                             </div>
                             
                             <div className="footer_col">
                                 <div className="footer_col_title">Adiciones</div>
                                 <ul>
-                                    <li><a href="#">Social</a></li>
+                                    <li><a href="/hola">Social</a></li>
                                 </ul>
                             </div>
         
@@ -71,9 +70,9 @@ class Footer extends Component {
                             <div className="footer_col">
                                 <div className="footer_col_title">Menu</div>
                                 <ul>
-                                    <li><a href="#">Home</a></li>
-                                    <li><a href="#">Nosotros</a></li>
-                                    <li><a href="#">Servicio</a></li>
+                                    <li><a href="/hola">Home</a></li>
+                                    <li><a href="/hola">Nosotros</a></li>
+                                    <li><a href="/hola">Servicio</a></li>
                                 </ul>
                             </div>
         
@@ -85,7 +84,7 @@ class Footer extends Component {
                             <div className="footer_col">
                                 <div className="footer_col_title">Nosotros</div>
                                 <ul>
-                                    <li><a href="#">El equipo</a></li>
+                                    <li><a href="/hola">El equipo</a></li>
                                 </ul>
                             </div>
         
@@ -97,7 +96,7 @@ class Footer extends Component {
                             <div className="footer_col">
                                 <div className="footer_col_title">Comunidad</div>
                                 <ul>
-                                    <li><a href="#">Blog</a></li>
+                                    <li><a href="/hola">Blog</a></li>
                                 </ul>
                             </div>
         

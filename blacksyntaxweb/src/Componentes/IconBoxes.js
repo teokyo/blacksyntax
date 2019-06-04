@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from '../logo.svg';
 import '../App.css';
 
 class IconBoxes extends Component {
@@ -19,7 +18,7 @@ class IconBoxes extends Component {
                                 <h1>Servicios interesantes</h1>
                             </div>
                             <div className="button icon_box_button trans_200">
-                                <a href="#" className="trans_200">mas información</a>
+                                <a href="/hola" className="trans_200">mas información</a>
                             </div>
                         </div>
         

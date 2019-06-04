@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from '../logo.svg';
 import '../App.css';
 
 class Newsletter extends Component {
@@ -25,7 +24,7 @@ class Newsletter extends Component {
                                 
                                 {/* Newsletter Form */}
                                 <div className="newsletter_form_container">
-                                    <form action="#">
+                                    <form action="/hola">
                                         <div className="input-group">
                                             <input type="email" className="newsletter_email" placeholder="Your e-mail address here" required="required" data-error="Valid email address is required."/>
                                             <button id="newsletter_form_submit" type="submit" className="button newsletter_submit_button trans_200" value="Submit">

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from '../logo.svg';
 import '../App.css';
 
 class Buscar extends Component {
@@ -15,7 +14,7 @@ class Buscar extends Component {
 				<div className="search_content d-flex flex-column align-items-center justify-content-center">
 					<div className="search_button d-flex flex-column align-items-center justify-content-center">
 						<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" 
-							width="18px" height="18px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" >
+							width="18px" height="18px" viewBox="0 0 100 100"  >
 							<g>
 								<g>
 									<path className="search_path" fill="#FFFFFF" d="M89.354,10.609c-14.144-14.146-37.157-14.146-51.301,0c-6.852,6.853-10.625,15.964-10.625,25.655
