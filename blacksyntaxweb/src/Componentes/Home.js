@@ -26,7 +26,7 @@ class Home extends Component {
         ListaFinalItem: ''
     };
 
-    componentDidMount() {
+    componentWillMount() {
         let ListaTemp = [];
         (this.state.Value).forEach((item, index) => {
             ListaTemp.push(< ItemSliderInicial key={index} valores={item}/>)
