@@ -7,6 +7,7 @@ import Features from './Componentes/Features';
 import Services from './Componentes/Services';
 import Newsletter from './Componentes/Newsletter';
 import Footer from './Componentes/Footer';
+import SliderSection from './Componentes/SliderSection';
 
 function App() {
   return (
@@ -15,8 +16,9 @@ function App() {
       <header style={{ height: '128px'}} className="header2"></header>
       <Home/>
       <IconBoxes/>
-      <VerticalSliderSection/>
+      {/*<VerticalSliderSection/>*/}
       <Services/>
+      <SliderSection/>
       <Features/>
       <Newsletter/>
       <Footer/>

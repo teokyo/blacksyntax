@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 class ItemSliderInicial extends Component {
 
     state = {};
 
     componentDidMount() {
-        this.setState({...(this.props.valores)});
+        this.setState({ ...(this.props.valores) });
     }
 
     render() {
@@ -15,7 +15,7 @@ class ItemSliderInicial extends Component {
                     className="owl-item hero_slider_item item_1 d-flex flex-column align-items-center justify-content-center">
                     <h1>{this.state.Titulo}</h1>
                     <span>{this.state.Subtitulo}</span>
-                    <span><img src={this.state.imagen} alt=""/></span>
+                    <span><img src={this.state.imagen} alt="" /></span>
 
                 </div>
 
