@@ -4,8 +4,8 @@ class ItemSliderInicial extends Component {
 
     state = {};
 
-    componentDidMount() {
-        this.setState({ ...(this.props.valores) });
+    componentWillMount() {
+        this.setState({...(this.props.valores)});
     }
 
     render() {

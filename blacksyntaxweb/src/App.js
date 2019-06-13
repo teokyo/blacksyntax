@@ -13,7 +13,9 @@ function App() {
   return (
     <div className="App">
       <Pro />
-      <header style={{ height: '128px'}} className="header2"></header>
+      <header style={{ height: '128px'}} className="header2">
+          
+      </header>
       <Home/>
       <IconBoxes/>
       {/*<VerticalSliderSection/>*/}
