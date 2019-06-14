@@ -5,14 +5,14 @@ class VerticalSliderSection extends Component {
 
     state={};
 
-    componentDidMount() {
+    componentWillMount() {
         this.setState({ ...(this.props.valores1) });
     }
 
     render(){
         return(
             <div>
-                <div class="v_slider_item">
+                <div className="v_slider_item">
                     <h1>{this.state.fragmento1}</h1>
                     <h1>{this.state.fragmento2}</h1>
                     <h1>{this.state.fragmento3}</h1>
