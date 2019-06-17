@@ -6,7 +6,7 @@ import '../App.css';
 class Home extends Component {
     ListaItem = [
         {
-            imagen: "http://lorempixel.com/700/500",
+            imagen: imagen,
             Titulo: 'Titulo 1',
             Subtitulo: 'Subtitulo 1'
         },
