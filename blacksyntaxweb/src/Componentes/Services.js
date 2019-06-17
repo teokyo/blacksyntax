@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../App.css';
 import ItemServices from '../Subcomponentes/ItemServices';
 
 class Services extends Component {
@@ -37,7 +36,7 @@ class Services extends Component {
     render(){
         const ListaSlider = this.state.ListaFinalItem;
         return(
-            <div className="services">{/* Services */}
+            <div style={{width:'100%', overflow:'hidden', marginLeft:'auto',marginRight:'auto'}} className="services">{/* Services */}
                 <div className="container">
                     <div className="row">
                         <div className="col text-center">
