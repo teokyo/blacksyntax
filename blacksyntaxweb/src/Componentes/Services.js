@@ -5,19 +5,19 @@ class Services extends Component {
 
     ListaItem = [
         {
-            Titulo: 'Amazing service',
-            parrafo: 'Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit am et tellus blandit. Etiam nec odio vesti bul mattis effic iturut magna.',
-            boton:'discover more'
+            Titulo: '',
+            parrafo: 'Black Syntax le ofrece un servicio para poder consultar su inventario de manera sencilla y efectiva.',
+            boton:'descubrir más'
         },
         {
-            Titulo: 'Amazing service',
-            parrafo: 'Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit am et tellus blandit. Etiam nec odio vesti bul mattis effic iturut magna.',
-            boton:'discover more'
+            Titulo: '',
+            parrafo: 'Podrá obtener reportes específicos gracias a los filtros de información que posee',
+            boton:'descubrir más'
         },
         {
-            Titulo: 'Amazing service',
-            parrafo: 'Etiam nec odio vestibulum est mattis effic iturut magna. Pellentesque sit am et tellus blandit. Etiam nec odio vesti bul mattis effic iturut magna.',
-            boton:'discover more'
+            Titulo: '',
+            parrafo: 'Ahorre tiempo en el manejo de su empresa y manténgase informado',
+            boton:'descubrir más'
         }
     ];
     state = {
@@ -42,7 +42,7 @@ class Services extends Component {
                         <div className="col text-center">
                             <div className="section_title">
                                 <h1>BlackSyntax Servicios</h1>
-                                <span>Explora tus servicios</span>
+                                <span>Explore sus servicios</span>
                             </div>
                         </div>
                     </div>

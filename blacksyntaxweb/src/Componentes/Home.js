@@ -22,17 +22,17 @@ class Home extends Component {
         },
         {
             imagen: imagen,
-            Titulo: 'Titulo 2',
+            Titulo: 'Titulo 4',
             Subtitulo: 'Subtitulo 2'
         },
         {
             imagen: imagen,
-            Titulo: 'Titulo 4',
+            Titulo: 'Titulo 5',
             Subtitulo: 'Subtitulo 4'
         },
         {
             imagen: imagen,
-            Titulo: 'Titulo 5',
+            Titulo: 'Titulo 6',
             Subtitulo: 'Subtitulo 5'
         }
     ];

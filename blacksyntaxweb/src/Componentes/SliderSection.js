@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import imagen from '../images/tecnologia.png';
+import imagen from '../images/candado.jpg';
 import '../App.css';
 import VerticalSliderSection from './VerticalSliderSection';
 
@@ -7,74 +7,12 @@ class SliderSection extends Component {
 
     ListaItem1 = [
         {
-            fragmento1: 'Fast support',
-            fragmento2: 'to all our',
-            fragmento3: 'clients. Just give',
-            fragmento4: 'us a shout',
-            parrafo: 'Etiam nec odio vestibulum est mattis effic iturut magna. Pelle ntesque sit am et tellus blandit. Etiam nec odio vestibul. Etiam nec odio vestibulum est mattis effic iturut.'
+            fragmento1: 'Portabilidad',
+            parrafo: 'Realice consultas donde sea que se encuentre sin inconvenientes ni interrupciones'
         },
         {
-            fragmento1: 'Fast support',
-            fragmento2: 'to all our',
-            fragmento3: 'clients. Just give',
-            fragmento4: 'us a shout',
-            parrafo: 'Etiam nec odio vestibulum est mattis effic iturut magna. Pelle ntesque sit am et tellus blandit. Etiam nec odio vestibul. Etiam nec odio vestibulum est mattis effic iturut.'
-
-        },
-        {
-            fragmento1: 'Fast support',
-            fragmento2: 'to all our',
-            fragmento3: 'clients. Just give',
-            fragmento4: 'us a shout',
-            parrafo: 'Etiam nec odio vestibulum est mattis effic iturut magna. Pelle ntesque sit am et tellus blandit. Etiam nec odio vestibul. Etiam nec odio vestibulum est mattis effic iturut.'
-
-        },
-        {
-            fragmento1: 'Fast support',
-            fragmento2: 'to all our',
-            fragmento3: 'clients. Just give',
-            fragmento4: 'us a shout',
-            parrafo: 'Etiam nec odio vestibulum est mattis effic iturut magna. Pelle ntesque sit am et tellus blandit. Etiam nec odio vestibul. Etiam nec odio vestibulum est mattis effic iturut.'
-
-        },
-        {
-            fragmento1: 'Fast support',
-            fragmento2: 'to all our',
-            fragmento3: 'clients. Just give',
-            fragmento4: 'us a shout',
-            parrafo: 'Etiam nec odio vestibulum est mattis effic iturut magna. Pelle ntesque sit am et tellus blandit. Etiam nec odio vestibul. Etiam nec odio vestibulum est mattis effic iturut.'
-
-        },
-        {
-            fragmento1: 'Fast support',
-            fragmento2: 'to all our',
-            fragmento3: 'clients. Just give',
-            fragmento4: 'us a shout',
-            parrafo: 'Etiam nec odio vestibulum est mattis effic iturut magna. Pelle ntesque sit am et tellus blandit. Etiam nec odio vestibul. Etiam nec odio vestibulum est mattis effic iturut.'
-
-        },
-        {
-            fragmento1: 'Fast support',
-            fragmento2: 'to all our',
-            fragmento3: 'clients. Just give',
-            fragmento4: 'us a shout',
-            parrafo: 'Etiam nec odio vestibulum est mattis effic iturut magna. Pelle ntesque sit am et tellus blandit. Etiam nec odio vestibul. Etiam nec odio vestibulum est mattis effic iturut.'
-
-        },
-        {
-            fragmento1: 'Fast support',
-            fragmento2: 'to all our',
-            fragmento3: 'clients. Just give',
-            fragmento4: 'us a shout',
-            parrafo: 'Etiam nec odio vestibulum est mattis effic iturut magna. Pelle ntesque sit am et tellus blandit. Etiam nec odio vestibul. Etiam nec odio vestibulum est mattis effic iturut.'
-
-        },
-        {
-            fragmento1: 'Fast support',
-            fragmento2: 'to all our',
-            fragmento3: 'clients. Just give',
-            fragmento4: 'us a shout',
-            parrafo: 'Etiam nec odio vestibulum est mattis effic iturut magna. Pelle ntesque sit am et tellus blandit. Etiam nec odio vestibul. Etiam nec odio vestibulum est mattis effic iturut.'
+            fragmento1: 'Seguridad',
+            parrafo: 'Cifrado de datos con algoritmo SHA-1'
 
         }
     ];

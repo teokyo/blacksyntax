@@ -15,7 +15,7 @@ class IconBoxes extends Component {
                     <div className="row">
                         <div className="col-lg-4">
                             <div className="icon_box_title">
-                                <h1>Servicios interesantes</h1>
+                                <h1>Te acercamos al futuro</h1>
                             </div>
                             <div className="button icon_box_button trans_200">
                                 <a href="/hola" className="trans_200">mas información</a>
@@ -26,14 +26,18 @@ class IconBoxes extends Component {
         
                              {/* Icon Box Item */}
                             <div className="icon_box_item">
-                                <h2>Equipo</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa </p>
+                                <h2>Misión</h2>
+                                <p>Desarrolar ideas innovadoras que ayuden a mejorar el crecimiento de las empresas y a su vez que contribuyan con la economía nacional basados en los principios y valores que nos rigen.</p>
                             </div>
         
                             {/* Icon Box Item */}
                             <div className="icon_box_item">
-                                <h2>Diseño Moderno</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. </p>
+                                <h2>valores</h2>
+                                <ul>
+                                    <li>responsabilidad</li>
+                                    <li>Honestidad</li>
+                                    <li>Ética profecional</li>
+                                </ul>
                             </div>
         
                         </div>
@@ -42,15 +46,15 @@ class IconBoxes extends Component {
         
                             {/* Icon Box Item */}
                             <div className="icon_box_item">
-                                <h2>Venta Marketing</h2>
-                                <p>Etiam euismod sapien nec est tempus consequat. Nullam eget pretium mi. Curabitur rhoncus finibus quam quis sodales.</p>
+                                <h2>Visión</h2>
+                                <p>Ser una empresa de soluciones tecnológicas reconocida a nivel nacional por la calidad e innovación de nuestros servicios y productos desarrollados.</p>
                             </div>
 
                             {/* Icon Box Item */}
-                            <div className="icon_box_item">
+                            {/*<div className="icon_box_item">
                                 <h2>Uso</h2>
                                 <p>Etiam euismod sapien nec est tempus consequat. Nullam eget pretium mi. Curabitur rhoncus finibus quam quis sodales.</p>
-                            </div>
+        </div>*/}
                             
                         </div>
                     </div>
