@@ -8,7 +8,6 @@ import Services from './Componentes/Services';
 import Newsletter from './Componentes/Newsletter';
 import Footer from './Componentes/Footer';
 import SliderSection from './Componentes/SliderSection';
-import Reportes from './Reportes.js';
 
 function App() {
   return (

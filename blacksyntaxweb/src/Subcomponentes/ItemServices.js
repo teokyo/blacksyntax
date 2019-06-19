@@ -22,7 +22,7 @@ class ItemServices extends Component {
 								</div>
 								<p>{this.state.parrafo}</p>
 								<div className="button service_item_button trans_200">
-									<a href="#" className="trans_200">{this.state.boton}</a>
+									<label className="trans_200">{this.state.boton}</label>
 								</div>
 							</div>
 						</div>

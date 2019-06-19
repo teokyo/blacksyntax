@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import "./App.css";
-import { wrap } from "module";
+import "../App.css";
 
 class Reportes extends Component {
   render() {
