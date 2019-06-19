@@ -44,7 +44,7 @@ class Home extends Component {
     componentWillMount() {
         let ListaTemp = [];
         (this.state.Value).forEach((item, index) => {
-            ListaTemp.push(< ItemSliderInicial key={index} valores={item}/>)
+            ListaTemp.push(< ItemSliderInicial key={index} valores={item}/>);
         });
         this.setState({ListaFinalItem: ListaTemp})
     }
