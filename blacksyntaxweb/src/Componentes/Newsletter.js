@@ -19,7 +19,7 @@ class Newsletter extends Component {
                                 {/* Newsletter Title */}
                                 <div className="newsletter_title">
                                     <h1>Suscribete</h1>
-                                    <span>Cursus, enim a ultrices venenatis, ante magna varius.</span>
+                                    <span>Para obtener información adicional.</span>
                                 </div>
                                 
                                 {/* Newsletter Form */}

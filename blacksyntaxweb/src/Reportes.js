@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./App.css";
-import { wrap } from "module";
 
 class Reportes extends Component {
   render() {
@@ -14,20 +13,38 @@ class Reportes extends Component {
           </div>
 
           <div className="row">
-            <div style={{flexWrap:"nowrap"}} className="col-sm-12 col-md-12 col-lg-6">
+            <div className="col-sm-12 col-md-12 col-lg-6">
               <form>
+                <span>Por rango de fechas</span>
+                <br/>
                 <span>De: </span>
                 <input type="date" placeholder="dd/mm/aaaa" />
                 <br />
-                <span>A: </span>
+                <span> A: </span>
                 <input type="date" placeholder="dd/mm/aaaa" />
               </form>
             </div>
-            <div style={{flexWrap:'nowwrap'}} className="col-sm-12 col-md-12 col-lg-6">
+            <div className="col-sm-12 col-md-12 col-lg-6">
               <form>
-                <span>Código de producto: </span>
+                <span>Por código de producto: </span>
+                <br />
                 <input type="text" />
               </form>
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="col-sm-12 col-md-12 col-lg-6">
+              <form>
+                <span>Por fecha de caducidad:</span>
+                <br />
+                <input type="date" />
+              </form>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-sm-12 col-md-12 col-lg-12">
+              <a>Realizar reporte</a>
             </div>
           </div>
         </div>

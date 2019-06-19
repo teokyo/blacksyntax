@@ -16,15 +16,15 @@ function App() {
      <Pro />
       <header style={{ height: '128px'}} className="header2">
       </header>
-      <Home/>
+      {/*<Home/>
       <IconBoxes/>
       <VerticalSliderSection/>
       <Services/>
       <SliderSection/>
       <Features/>
       <Newsletter/>
-      <Footer/>
-      {/*<Reportes/>*/}
+      <Footer/>*/}
+      <Reportes/>
     </div>
   );
 }
