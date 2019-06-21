@@ -13,8 +13,8 @@ class Pro extends Component {
     };
     render() {
         return (
-            <header className="header d-flex flex-row justify-content-end align-items-center trans_200">
-            <nav className="main_nav justify-self-end text-right">
+            <header className="col-sm-12 col-md-12 col-lg-12 header d-flex flex-row justify-content-end align-items-center trans_200">
+            <nav className="col-sm-12 col-md-12 col-lg-12 main_nav justify-self-end text-right">
 			<ul>
 				<li className="active"><a id='/' href='/' >Home</a></li>
 				<li><a id='Reportes' href='/Reportes'>Reportes</a></li>
