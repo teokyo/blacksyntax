@@ -38,18 +38,17 @@ class SliderSection extends Component {
                 <div className="container fill_height">
                     <div className="row fill_height">
 
-                        <div className="col-lg-6 v_slider_section_image">
+                        <div className="col-sm-12 col-lg-6 v_slider_section_image">
                             <div className="v_slider_image">
                                 <img src={imagen} alt="" />
                             </div>
                         </div>
 
-                        <div className="col-lg-5 offset-lg-1 v_slider_content d-flex flex-column justify-content-center">
+                        <div className="col-sm-12 col-lg-5 offset-lg-1 v_slider_content d-flex flex-column justify-content-center">
                             <div className="v_slider_container">
 
                                 {/* Vertical Slider */}
                                 <div className="v_slider">
-
                                     {ListaSlider1}
                                 </div>
                             </div>
