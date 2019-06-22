@@ -75,7 +75,7 @@ class Reportes extends Component {
                 this.setState({
                     ContenedorFinal: <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 row">
                         <div className="col-6">
-                            <span>Por rango de fechas de:</span>
+                            <span>Por rango de fechas de :</span>
                             <input id='FechaInical'  onChange={this.Cambio} type="date"
                                    className="form-control" placeholder="Usuario"/>
                         </div>
