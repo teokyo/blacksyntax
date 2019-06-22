@@ -3,7 +3,7 @@ import "../App.css";
 import "../css/Reportes.css";
 
 class Reportes extends Component {
-    state = {FechaInical: '', FechaFinal: ''};
+    state = {FechaInical: '', FechaFinal: '',CodigoProducto:''};
 
     componentWillMount() {
     console.log('hola')
@@ -43,7 +43,7 @@ class Reportes extends Component {
 
                                     <span>Por código de producto: </span>
                                     <br/>
-                                    <input id='CodigoProducto' onClick={this.Cambio} type="text"/>
+                                    <input id='CodigoProducto' value={this.state.CodigoProducto} onChange={this.Cambio} type="text"/>
                                 </div>
 
 
@@ -53,12 +53,13 @@ class Reportes extends Component {
                                 <div className="col-sm-12 col-md-6 col-lg-4">
                                     <span>Ordenar por productos por:</span>
                                     <br/>
-                                    <input id='OrderVenta' onClick={this.Cambio} type="radio" name="orden"
-                                           value="masvendido"/> Más
-                                    vendidos<br/>
-                                    <input id='OrderVenta' onClick={this.Cambio} type="radio" name="orden"
-                                           value="menosvendido"/>
-                                    Menos vendidos
+                                    <input id='OrderVenta' checked={this.state.OrderVenta === 'masvendido'}
+                                           onChange={this.Cambio} type="radio" name="orden"
+                                           value="masvendido"/> Más vendidos<br/>
+
+                                    <input id='OrderVenta' checked={this.state.OrderVenta === 'menosvendido'}
+                                           onChange={this.Cambio} type="radio" name="orden"
+                                           value="menosvendido"/>Menos vendidos
                                 </div>
 
                                 <div className="col-sm-12 col-md-6 col-lg-4">
@@ -66,8 +67,8 @@ class Reportes extends Component {
                                     <br/>
                                     <select id='Category' value={this.state.Category} onChange={this.Cambio}>
                                         <option value=''></option>
-                                        <option value='Hola 1'>hola</option>
-                                        <option value='Hola 2'>hola</option>
+                                        <option value='Hola 1'>hola1</option>
+                                        <option value='Hola 2'>hola2</option>
                                     </select>
                                 </div>
                             </div>
