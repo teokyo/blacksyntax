@@ -5,19 +5,20 @@ class Services extends Component {
 
     ListaItem = [
         {
-            Titulo: '',
-            parrafo: 'Black Syntax le ofrece un servicio para poder consultar su inventario de manera sencilla y efectiva.',
-            boton:'descubrir más'
+            Titulo: 'Fundador:',
+            parrafo: 'José Miguel Carrera Pacheco',
         },
         {
-            Titulo: '',
-            parrafo: 'Podrá obtener reportes específicos gracias a los filtros de información que posee',
-            boton:'descubrir más'
+            Titulo: 'Fundador:',
+            parrafo: 'Pedro González Hernández',
         },
         {
-            Titulo: '',
-            parrafo: 'Ahorre tiempo en el manejo de su empresa y manténgase informado',
-            boton:'descubrir más'
+            Titulo: 'Fundador:',
+            parrafo: 'Geovanni Mejía Estrada',
+        },
+        {
+            Titulo: 'Fundador:',
+            parrafo: 'Juan Carlos Elizondo',
         }
     ];
     state = {
@@ -39,19 +40,18 @@ class Services extends Component {
             <div style={{width:'100%', overflow:'hidden', marginLeft:'auto',marginRight:'auto'}} className="services">{/* Services */}
                 <div className="container">
                     <div className="row">
-                        <div className="col text-center">
-                            <div className="section_title">
-                                <h1>BlackSyntax Servicios</h1>
-                                <span>Explore sus servicios</span>
+                        <div className="col-sm-12 text-center">
+                            <div className="col-sm-12 section_title">
+                                <h1>BlackSyntax Fundadores</h1>
                             </div>
                         </div>
                     </div>
                 </div>
         
-                <div className="h_slider_container services_slider_container">
-                    <div className="service_slider_outer">
+                <div className="col-sm-12 h_slider_container services_slider_container">
+                    <div className=" service_slider_outer">
                         {/* Services Slider */}
-                        <div className="owl-carousel owl-theme services_slider">
+                        <div className=" owl-carousel owl-theme services_slider">
 
                         {ListaSlider}
         

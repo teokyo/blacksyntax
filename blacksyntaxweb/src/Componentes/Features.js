@@ -13,9 +13,9 @@ class Features extends Component {
             <div className="features">{/* Features */}
                 <div className="container">
                     <div className="row">
-                        <div className="col text-center">
+                        <div className="col-sm-12 text-center">
         
-                            <div className="section_title">
+                            <div className="col-sm-12 section_title">
                                 <h1>Componente </h1>
                             </div>
         

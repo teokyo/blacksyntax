@@ -13,7 +13,7 @@ class Footer extends Component {
         {/* Footer */}
         <div className="container">
           <div className="row">
-            <div className="col-lg-4">
+            <div className="col-sm-12">
               {/* Footer Intro */}
               <div className="footer_intro">
                 {/* Logo */}
@@ -30,11 +30,6 @@ class Footer extends Component {
                   <ul>
                     <li>
                       <a href="/hola">
-                        <i className="fab fa-pinterest" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="/hola">
                         <i className="fab fa-facebook-f" />
                       </a>
                     </li>
@@ -43,78 +38,11 @@ class Footer extends Component {
                         <i className="fab fa-twitter" />
                       </a>
                     </li>
-                    <li>
-                      <a href="/hola">
-                        <i className="fab fa-dribbble" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="/hola">
-                        <i className="fab fa-behance" />
-                      </a>
-                    </li>
-                    <li>
-                      <a href="/hola">
-                        <i className="fab fa-linkedin-in" />
-                      </a>
-                    </li>
                   </ul>
                 </div>
 
                 {/* Copyright */}
                 <div className="footer_cr">Copyright BlackSyntax</div>
-              </div>
-            </div>
-
-            {/* Footer Servicio */}
-            <div className="col-lg-2">
-              <div className="footer_col">
-                <div className="footer_col_title">Servicio</div>
-                <ul>
-                  <li>
-                    <a href="/hola">Social media</a>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="footer_col">
-                <div className="footer_col_title">Adiciones</div>
-                <ul>
-                  <li>
-                    <a href="/hola">Social</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Footer Menu */}
-            <div className="col-lg-2">
-              <div className="footer_col">
-                <div className="footer_col_title">Menu</div>
-                <ul>
-                  <li>
-                    <a href="/hola">Home</a>
-                  </li>
-                  <li>
-                    <a href="/hola">Nosotros</a>
-                  </li>
-                  <li>
-                    <a href="/hola">Servicio</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Footer About */}
-            <div className="col-lg-2">
-              <div className="footer_col">
-                <div className="footer_col_title">Fundadores</div>
-                <ul>
-                  <li>Jose Miguel Carrera Pacheco</li>
-                  <li>Pedro González Hernández</li>
-                  <li>Geovanni Mejía Estrada</li>
-                  <li>Juan Carlos Elizondo</li>
-                </ul>
               </div>
             </div>
           </div>

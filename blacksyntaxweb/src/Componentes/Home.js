@@ -44,7 +44,7 @@ class Home extends Component {
     componentWillMount() {
         let ListaTemp = [];
         (this.state.Value).forEach((item, index) => {
-            ListaTemp.push(< ItemSliderInicial key={index} valores={item}/>)
+            ListaTemp.push(< ItemSliderInicial key={index} valores={item}/>);
         });
         this.setState({ListaFinalItem: ListaTemp})
     }
@@ -56,7 +56,7 @@ class Home extends Component {
 
 
                 { /* div className hero */}
-                <div className="hero_slider_container">
+                <div className="col-sm-12  hero_slider_container">
                     <div className="owl-carousel owl-theme hero_slider">
                         {/*slider team */}
                         {ListaSlider}
@@ -79,7 +79,7 @@ class Home extends Component {
                 </div>
 
 
-                <div className="hero_side_text_container">
+                <div className="  hero_side_text_container">
                     <div
                         className="double_arrow_container d-flex flex-column align-items-center justify-content-center">
                         <div className="double_arrow nav_links" data-scroll-to=".icon_boxes">
@@ -88,8 +88,8 @@ class Home extends Component {
                         </div>
                     </div>
                     <div className="hero_side_text">
-                        <h2>Modern design easy to use</h2>
-                        <p>Maecenas id orci rutrum, vehicula nunc sit amet, fringilla ante. Nulla efficitur.</p>
+                        <h2>BlackSyntax</h2>
+                        <p>Te acercamos al futuro</p>
                     </div>
                 </div>
 
