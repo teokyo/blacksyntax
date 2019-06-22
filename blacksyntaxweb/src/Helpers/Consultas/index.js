@@ -1,7 +1,9 @@
 import axios from 'axios';
 class Consultas {
-    getPosts() {
-        return axios.get('https://jsonplaceholder.typicode.com/posts');
+    static  getCategory=()=> {
+        return axios.get('http://192.168.0.21/blacksyntax/api/products',{
+            responseType: 'json'
+        });
     }
 
 }

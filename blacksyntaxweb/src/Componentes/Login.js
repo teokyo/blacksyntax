@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "../css/Login.css";
 
 class Login extends Component {
-  state = { User: "", Password: "" };
+  state = { User: "", Password: "", stilo:'login'};
 
   Cambio = e => {
     const name = e.target.id;
@@ -10,9 +10,19 @@ class Login extends Component {
     this.setState({ [name]: value }, () => console.log(this.state[name]));
   };
 
+  changeVisibility=()=>{
+    console.log('entro')
+    if(this.state.stilo === 'login'){
+      this.setState({stilo:'login1'})
+    }else{
+      this.setState({stilo:'login'})
+
+    }
+  }
   render() {
     return (
-      <div className="login">
+      <div>
+        <div className={this.state.stilo}>
         <span>Inicie sesión</span>
         <form method="post">
           Correo:
@@ -34,10 +44,13 @@ class Login extends Component {
           />
           <br />
           <button type="submit" value="submit">
-            Iniciar Sesión
+            Iniciar Sesión2
           </button>
         </form>
       </div>
+        <button id="btnlogin" type='button'className='bhutonFlotante' onClick={this.changeVisibility}>Login</button>
+      </div>
+      
     );
   }
 }

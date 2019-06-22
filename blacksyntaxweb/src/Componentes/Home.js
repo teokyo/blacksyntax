@@ -3,7 +3,6 @@ import imagen from '../images/slider_background.jpg';
 import ItemSliderInicial from '../Subcomponentes/ItemSliderInicial'
 import Login from './Login';
 import '../App.css';
-import FloatingButton from '../Subcomponentes/FloatingButton';
 
 class Home extends Component {
     ListaItem = [
@@ -42,6 +41,7 @@ class Home extends Component {
         Value: this.ListaItem,
         ListaFinalItem: ''
     };
+
 
     componentWillMount() {
         let ListaTemp = [];
@@ -98,11 +98,10 @@ class Home extends Component {
                 <div className="next_section_scroll">
                     <div className="next_section nav_links" data-scroll-to=".icon_boxes">
                         <i className="fas fa-chevron-down trans_200"></i>
-                        <i className="fas fa-chevron-down trans_200"></i>
+                        <i className="fab fa-chevron-down trans_200"></i>
                     </div>
                 </div>
                 <Login/>
-                <FloatingButton/>
             </div>
         );
     }
