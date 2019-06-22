@@ -18,6 +18,7 @@ class Pro extends Component {
 			<ul>
 				<li className="active"><a id='/' href='/' >Home</a></li>
 				<li><a id='Reportes' href='/Reportes'>Reportes</a></li>
+                <li><a id="Login" href="/Login">view</a></li>
 			</ul>
             <Buscar />
             </nav> 

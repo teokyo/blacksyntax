@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import imagen from '../images/slider_background.jpg';
 import ItemSliderInicial from '../Subcomponentes/ItemSliderInicial'
+import Login from './Login';
 import '../App.css';
+import FloatingButton from '../Subcomponentes/FloatingButton';
 
 class Home extends Component {
     ListaItem = [
@@ -99,6 +101,8 @@ class Home extends Component {
                         <i className="fas fa-chevron-down trans_200"></i>
                     </div>
                 </div>
+                <Login/>
+                <FloatingButton/>
             </div>
         );
     }

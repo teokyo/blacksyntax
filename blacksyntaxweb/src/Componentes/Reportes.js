@@ -89,10 +89,16 @@ class Reportes extends Component {
                            </form>
                        </div>
                        <div className='col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6'>
-                           <p>aksldjlkashdlk</p>
+                           <table>
+                               <tr>
+                                   <th>stg</th>
+                                   <th>stg</th>
+                               </tr>
+                               <td>somtg</td>
+                               <td>somtg</td>
+                           </table>
                        </div>
                    </div>
-
                 </div>
             </div>
         );

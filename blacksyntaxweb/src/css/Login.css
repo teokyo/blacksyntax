@@ -1,0 +1,16 @@
+.login span{
+    font-size: 30px;
+    color: black;
+}
+.login{
+    z-index: 1000;  
+    position: absolute ;
+    background-color: aquamarine;
+    left: 86%;
+    visibility: hidden;
+}
+#floatingb{
+z-index: 1001;
+position: absolute;
+left: 95%;
+}
