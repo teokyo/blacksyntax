@@ -6,7 +6,7 @@ class Reportes extends Component {
     state = {FechaInical: '', FechaFinal: ''};
 
     componentWillMount() {
-
+    console.log('hola')
     }
 
     Cambio = (e) => {
