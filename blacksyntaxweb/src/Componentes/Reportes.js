@@ -4,37 +4,82 @@ import Alert from 'react-s-alert';
 import "../App.css";
 import "../css/Reportes.css";
 import Consultas from '../Helpers/Consultas';
-function Navegacion() {
-    return(
-        <div className="col-12">
-            <p>holo mundo </p>
-        </div>
-    )
-}
+
+
 class Reportes extends Component {
-    state = {FechaInical: '', FechaFinal: '',CodigoProducto:'', Categorys: [], Category: 'Pedro'};
-
-    componentWillMount() {
-        Consultas.getCategory().then(e=>{
-                if(e.data.notFound){
-                    this.Alerta('Datos Vacios',false,1000)
-                }else{
-                    console.log(e.data);
-                }
-        }).catch(()=>this.Alerta('Error en su conexión',false,1000));
-    }
-
-    Click=()=>{
-        Alert.error('Test message 3')
+    state = {
+        FechaInical: '',
+        FechaFinal: '',
+        CodigoProducto: '',
+        Categorys: [],
+        Category: 'Pedro',
+        ConMen: '',
+        ContenedorFinal: null
     };
+
     Cambio = (e) => {
         const name = e.target.id;
         const value = e.target.value;
         this.setState({[name]: value});
     };
 
-    CambioCategory=(e)=>{
-        this.setState({ Category:e });
+    CambioStilo = (e) => {
+        const id = e.target.id;
+        switch (id) {
+            case 'C1': {
+                this.setState({
+                    ContenedorFinal: <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 row">
+                        <div className="col-6">
+                            <span>Por rango de fechas de:</span>
+                            <input id='FechaInical'  onChange={this.Cambio} type="date"
+                                   className="form-control" placeholder="Usuario"/>
+                        </div>
+
+                        <div className='col-6'>
+                            <span> a: </span>
+                            <input id='FechaFinal'  onChange={this.Cambio}
+                                   type="date" className="form-control" placeholder="dd/mm/aaaa"/>
+                        </div>
+                        <div className='col-12 row' style={{marginTop:'2%'}}>
+                            <span className='col-3'> Venta: </span>
+                            <input  id='Venta' onChange={this.Cambio}
+                                   type="text" className="form-control col-8" placeholder="Id venta" />
+                        </div>
+                    </div>
+                });
+                break;
+            }
+            default: {
+                this.setState({ContenedorFinal: null})
+            }
+        }
+    };
+
+    CargarTabla=(Valor)=>{
+        let Encabezado ='';
+        let Valores ='';
+        Object.keys(Valor[0]).forEach(o=>{
+            console.log(o)
+        })
+    };
+
+    componentWillMount() {
+        Consultas.getCategory().then(e => {
+            if (e.data.notFound) {
+                this.Alerta('Datos Vacios', false, 1000)
+            } else {
+                this.CargarTabla(e.data['result']);
+            }
+        }).catch((e) => {this.Alerta('Error en su conexión', false, 1000); console.log(e)});
+    }
+
+    Click = () => {
+        Alert.error('Test message 3')
+    };
+
+
+    CambioCategory = (e) => {
+        this.setState({Category: e});
     };
 
     Alerta = (texto, tipo, tiempo) => {
@@ -48,79 +93,76 @@ class Reportes extends Component {
             timeout: tiempo
         });
     };
+
     render() {
         return (
             <div className="reportes">
-                <Alert stack={{limit: 3}} />
+                <Alert stack={{limit: 3}}/>
                 <div className="container ">
-                    <div className="row">
+                    <div className="row" >
                         <div className="col-lg-12" id="reporteTitle">
                             <h1>Filtros de reporte</h1>
                         </div>
                     </div>
-                   <div className='row'>
-                       <div className='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
-                        <Navegacion/>
-                           <form>
-                               <div className="row">
-                                   <div className="col-sm-12 col-md-6 col-lg-4">
-                                       <span>Por rango de fechas</span>
-                                       <br/>
-                                       <span>De: </span> <br/>
-                                       <input value={this.state.FechaInical} onChange={this.Cambio} type="date"
-                                              className="form-control" placeholder="Usuario"/>
-                                       <br/>
-                                       <span> A: </span> <br/>
-                                       <input id='FechaFinal' value={this.state.FechaFinal} onChange={this.Cambio}
-                                              type="date" className="form-control" placeholder="dd/mm/aaaa"/>
-                                   </div>
-                                   <div className="col-sm-12 col-md-6 col-lg-4">
+                    <div className='row'>
 
-                                       <span>Por código de producto: </span>
-                                       <br/>
-                                       <input id='CodigoProducto' value={this.state.CodigoProducto} onChange={this.Cambio} type="text"/>
-                                   </div>
-
-
-                               </div>
-
-                               <div className="row">
-                                   <div className="col-sm-12 col-md-6 col-lg-4">
-                                       <span>Ordenar por productos por:</span>
-                                       <br/>
-                                       <input id='OrderVenta' checked={this.state.OrderVenta === 'masvendido'}
-                                              onChange={this.Cambio} type="radio" name="orden"
-                                              value="masvendido"/> Más vendidos<br/>
-
-                                       <input id='OrderVenta' checked={this.state.OrderVenta === 'menosvendido'}
-                                              onChange={this.Cambio} type="radio" name="orden"
-                                              value="menosvendido"/>Menos vendidos
-                                   </div>
-
-                                   <div className="col-sm-12 col-md-6 col-lg-4">
-                                       <span>Por categoría</span>
-                                       <br/>
-                                       <Select
-                                           value={this.state.Category}
-                                           onChange={this.CambioCategory}
-                                           options={this.state.Categorys}
-                                       />
-                                   </div>
-                               </div>
-
-                               <div className="row">
-                                   <div className="col-sm-12" id="repcontent">
-                                       <button type='button' onClick={this.Click} className="button-reporte">
-                                           Realizar reporte
-                                       </button>
-                                   </div>
-                               </div>
-                           </form>
-                       </div>
-                       <div className='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
-                           <p>aksldjlkashdlk</p>
-                       </div>
-                   </div>
+                        {/*Navegacion*/}
+                        <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style={{marginBottom:'2%'}}>
+                            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                                <button className="navbar-toggler" type="button" data-toggle="collapse"
+                                        data-target="#navbarNav"
+                                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span className="navbar-toggler-icon"></span>
+                                </button>
+                                <div className="collapse navbar-collapse" id="navbarNav">
+                                    <ul className="navbar-nav">
+                                        <li name='C1' className="nav-item">
+                                            <label id='C1' onClick={this.CambioStilo} className="nav-link">VENTAS </label>
+                                        </li>
+                                        <li name="'C2" className="nav-item">
+                                            <label id='C2' onClick={this.CambioStilo} className="nav-link">SUCRUSAL </label>
+                                        </li>
+                                        <li name='C3' className="nav-item">
+                                            <label id='C3' onClick={this.CambioStilo}
+                                                   className="nav-link">PRODUCTOS</label>
+                                        </li>
+                                        <li name='C4' className="nav-item">
+                                            <label id='C4' onClick={this.CambioStilo}
+                                                   className="nav-link ">PROMOCIONES</label>
+                                        </li>
+                                        <li name='C5' className="nav-item">
+                                            <label id='C5' onClick={this.CambioStilo}
+                                                   className="nav-link ">EMPLEADOS</label>
+                                        </li>
+                                        <li name='C6' className="nav-item">
+                                            <label id='C6' onClick={this.CambioStilo}
+                                                   className="nav-link ">DOCTORES</label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </nav>
+                            {/*Conten*/}
+                            <form style={{marginTop:'2%'}}>
+                                {this.state.ContenedorFinal}
+                            </form>
+                            {/*Fin Conten*/}
+                        </div>
+                        {/*fin Navegacion*/}
+                        <div className='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
+                            <table className="table users table-hover">
+                                <thead>
+                                <tr className="table-primary">
+                                    <th>RFC</th>
+                                    <th>Nombre</th>
+                                    <th>Estado</th>
+                                </tr>
+                                </thead>
+                                <tbody className='grid'>
+                                {this.state.listaFinal}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
 
                 </div>
             </div>
