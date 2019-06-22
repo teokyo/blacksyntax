@@ -13,8 +13,7 @@ class ItemSliderInicial extends Component {
             <div>
                 <div
                     className="owl-item hero_slider_item item_1 d-flex flex-column align-items-center justify-content-center">
-                    <h1>{this.state.Titulo}</h1>
-                    <span>{this.state.Subtitulo}</span>
+
                     <span><img src={this.state.imagen} alt="" /></span>
 
                 </div>
