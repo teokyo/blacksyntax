@@ -3,7 +3,7 @@
     class SalesModel extends Models {
 
         function getSales(){ 
-            $result  = $this->db->query("SELECT b.nombre_desc as Sucursal, d.nombre as Nombre_Empleado, d.apellidoMaterno as Apellido_Materno, d.apellidoPaterno as Apellido_Paterno, <A.fecha_venta> as Fecha, <A.numero_productos> as Productos
+            $result  = $this->db->query("SELECT a.id_venta, b.nombre_desc as Sucursal, d.nombre as Nombre_Empleado, d.apellidoMaterno as Apellido_Materno, d.apellidoPaterno as Apellido_Paterno, <A.fecha_venta> as Fecha, <A.numero_productos> as Productos
              from 
              ventas A
              join sucursales B on b.id_sucursal = a.id_sucursal
@@ -50,7 +50,7 @@
         function getSalesRecent(){
             //return array(['data'=> 'Si llegué']);
             
-             $result  = $this->db->query("SELECT b.nombre_desc as Sucursal, d.nombre as Nombre_Empleado, d.apellidoMaterno as Apellido_Materno, d.apellidoPaterno as Apellido_Paterno, <A.fecha_venta> as Fecha, <A.numero_productos> as Productos
+             $result  = $this->db->query("SELECT A.id_venta, b.nombre_desc as Sucursal, d.nombre as Nombre_Empleado, d.apellidoMaterno as Apellido_Materno, d.apellidoPaterno as Apellido_Paterno, <A.fecha_venta> as Fecha, <A.numero_productos> as Productos
              from 
              ventas A
              join sucursales B on b.id_sucursal = a.id_sucursal

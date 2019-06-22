@@ -11,18 +11,63 @@ class Reportes extends Component {
         FechaInical: '',
         FechaFinal: '',
         CodigoProducto: '',
+        ListaEncabezado:null,
         Categorys: [],
         Category: 'Pedro',
         ConMen: '',
-        ContenedorFinal: null
+        ContenedorFinal: null,
+        BooleanTabla:false
     };
 
     Cambio = (e) => {
         const name = e.target.id;
         const value = e.target.value;
+        if(value !== ''){
+            if(name === 'Venta') {
+                this.Consulta(value);
+            }
+        }else{
+            this.LimpiarTabla();
+        }
         this.setState({[name]: value});
     };
+    LimpiarTabla=()=>{
+        this.setState({ ListaEncabezado:null, listaFinal: null,BooleanTabla:false})
+    }
+    Consulta=(q)=>{
+        Consultas.getVentasID(q).then(e => {
+            if (e.data.notFound) {
+                this.Alerta('Datos Vacios', false, 1000)
+                this.LimpiarTabla();
+            } else {
+                this.CargarTabla(e.data['result']);
+            }
+        }).catch((e) => {this.Alerta('Error en su conexión', false, 1000); console.log(e)});
+    };
+    ConsultaFechas=(FI,FF)=>{
+        Consultas.getVentasRangoFechas(FI,FF).then(e => {
+            if (e.data.notFound) {
+                this.Alerta('Datos Vacios', false, 1000)
+                this.LimpiarTabla();
+            } else {
+                console.log(e.data)
+                this.CargarTabla(e.data['result']);
+            }
+        }).catch((e) => {this.Alerta('Error en su conexión', false, 1000); console.log(e)});
+    };
+    Parametros=(comparar)=>{
+        console.log(comparar)
+        switch (comparar) {
+            case 'Ventas':{
+                if(this.state.Venta){
 
+                }else{
+                    this.ConsultaFechas(this.state.FechaInical,this.state.FechaFinal);
+                }
+                break;
+            }
+        }
+    };
     CambioStilo = (e) => {
         const id = e.target.id;
         switch (id) {
@@ -45,6 +90,11 @@ class Reportes extends Component {
                             <input  id='Venta' onChange={this.Cambio}
                                    type="text" className="form-control col-8" placeholder="Id venta" />
                         </div>
+                        <div className='col-12'>
+                            <button type='button' className='btn-outline-info' onClick={()=>this.Parametros('Ventas')}>
+                                Filtro
+                            </button>
+                        </div>
                     </div>
                 });
                 break;
@@ -56,11 +106,20 @@ class Reportes extends Component {
     };
 
     CargarTabla=(Valor)=>{
-        let Encabezado ='';
-        let Valores ='';
-        Object.keys(Valor[0]).forEach(o=>{
-            console.log(o)
-        })
+        let Encabezado =[];
+        let Valores =[];
+        Object.keys(Valor[0]).forEach((o,index)=>{
+            Encabezado.push(<td key={index}>{o}</td>)
+        });
+        Object.values(Valor).forEach((o,index)=>{
+            let Valor = [];
+            Encabezado.forEach((p,index)=>{
+                Valor.push(<td key={index}>{o[p.props.children]}</td>)
+            });
+            Valores.push(<tr key={index}>{Valor}</tr>)
+
+        });
+        this.setState({ListaEncabezado:Encabezado,listaFinal:Valores,BooleanTabla:true})
     };
 
     componentWillMount() {
@@ -95,6 +154,16 @@ class Reportes extends Component {
     };
 
     render() {
+        const Tabla = this.state.BooleanTabla ? <table className="table users table-hover">
+            <thead>
+            <tr className="table-primary">
+                {this.state.ListaEncabezado}
+            </tr>
+            </thead>
+            <tbody className='grid'>
+            {this.state.listaFinal}
+            </tbody>
+        </table>:<h1 className='text-center'>Sin Información</h1>;
         return (
             <div className="reportes">
                 <Alert stack={{limit: 3}}/>
@@ -149,18 +218,7 @@ class Reportes extends Component {
                         </div>
                         {/*fin Navegacion*/}
                         <div className='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
-                            <table className="table users table-hover">
-                                <thead>
-                                <tr className="table-primary">
-                                    <th>RFC</th>
-                                    <th>Nombre</th>
-                                    <th>Estado</th>
-                                </tr>
-                                </thead>
-                                <tbody className='grid'>
-                                {this.state.listaFinal}
-                                </tbody>
-                            </table>
+                            {Tabla}
                         </div>
                     </div>
 
