@@ -1,27 +1,32 @@
 import React, { Component } from 'react';
-import Search from './Search';
 
+import '../App.css';
+import Buscar from './Buscar.js';
 class Pro extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {};
-    }
 
+    state = {};
+
+    CambioLink=(e)=>{
+       /* const ruta =e.target.id;
+        this.props.history.push({
+            pathname: ruta,
+        });*/
+    };
     render() {
         return (
-            <header className="header d-flex flex-row justify-content-end align-items-center trans_200">
-                <nav className="main_nav justify-self-end text-right">
-                    <ul>
-                        <li className="active"><a href="#">Home</a></li>
-                        <li><a href="/Reportes">Reportes</a></li>
-                       
-                    </ul>
-                <Search></Search>
-
-                </nav>
+            <header className="col-sm-12 col-md-12 col-lg-12 header d-flex flex-row justify-content-end align-items-center trans_200">
+            <nav className="col-sm-12 col-md-12 col-lg-12 main_nav justify-self-end text-right">
+			<ul>
+				<li className=""><a id='/' href='/' >Home</a></li>
+				<li><a id='Reportes' href='/Reportes'>Reportes</a></li>
+			</ul>
+            <Buscar />
+            </nav> 
             </header>
         );
     }
+
 }
 
 export default Pro;
+
