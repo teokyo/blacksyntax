@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'jquery/dist/jquery.min';
 import 'popper.js/dist/popper.min';
@@ -14,6 +15,7 @@ import 'react-s-alert/dist/s-alert-css-effects/flip.css';
 import 'react-s-alert/dist/s-alert-css-effects/genie.css';
 import 'react-s-alert/dist/s-alert-css-effects/jelly.css';
 import 'react-s-alert/dist/s-alert-css-effects/stackslide.css';
+
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 

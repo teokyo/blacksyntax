@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import '../App.css';
 import Buscar from './Buscar.js';
 class Pro extends Component {
@@ -28,3 +29,4 @@ class Pro extends Component {
 }
 
 export default Pro;
+

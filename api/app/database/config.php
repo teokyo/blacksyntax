@@ -1,7 +1,7 @@
 <?php
     return array(
         'database_type'=>'mysql',
-        'database_name'=>'classicmodels',
+        'database_name'=>'far',
         'server'=>'localhost',
         'username'=>'root',
         'password'=>'',

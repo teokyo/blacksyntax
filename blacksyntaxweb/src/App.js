@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import  Contenedor from './Componentes/Contenedor';
 import  Reportes from './Componentes/Reportes';
@@ -16,6 +17,7 @@ function App() {
               </Switch>
           </BrowserRouter>
       </div>
+
   );
 }
 
