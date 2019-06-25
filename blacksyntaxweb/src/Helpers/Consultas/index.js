@@ -16,6 +16,9 @@ class Consultas {
             final:FechaF
         },{responseType: 'json'});
     };
+
+
+
 }
 
 export default Consultas;

@@ -11,30 +11,30 @@ class Reportes extends Component {
         FechaInical: '',
         FechaFinal: '',
         CodigoProducto: '',
-        ListaEncabezado:null,
+        ListaEncabezado: null,
         Categorys: [],
         Category: 'Pedro',
         ConMen: '',
         ContenedorFinal: null,
-        BooleanTabla:false
+        BooleanTabla: false
     };
 
     Cambio = (e) => {
         const name = e.target.id;
         const value = e.target.value;
-        if(value !== ''){
-            if(name === 'Venta') {
+        if (value !== '') {
+            if (name === 'Venta') {
                 this.Consulta(value);
             }
-        }else{
+        } else {
             this.LimpiarTabla();
         }
         this.setState({[name]: value});
     };
-    LimpiarTabla=()=>{
-        this.setState({ ListaEncabezado:null, listaFinal: null,BooleanTabla:false})
+    LimpiarTabla = () => {
+        this.setState({ListaEncabezado: null, listaFinal: null, BooleanTabla: false})
     }
-    Consulta=(q)=>{
+    Consulta = (q) => {
         Consultas.getVentasID(q).then(e => {
             if (e.data.notFound) {
                 this.Alerta('Datos Vacios', false, 1000)
@@ -42,10 +42,13 @@ class Reportes extends Component {
             } else {
                 this.CargarTabla(e.data['result']);
             }
-        }).catch((e) => {this.Alerta('Error en su conexión', false, 1000); console.log(e)});
+        }).catch((e) => {
+            this.Alerta('Error en su conexión', false, 1000);
+            console.log(e)
+        });
     };
-    ConsultaFechas=(FI,FF)=>{
-        Consultas.getVentasRangoFechas(FI,FF).then(e => {
+    ConsultaFechas = (FI, FF) => {
+        Consultas.getVentasRangoFechas(FI, FF).then(e => {
             if (e.data.notFound) {
                 this.Alerta('Datos Vacios', false, 1000)
                 this.LimpiarTabla();
@@ -53,16 +56,19 @@ class Reportes extends Component {
                 console.log(e.data)
                 this.CargarTabla(e.data['result']);
             }
-        }).catch((e) => {this.Alerta('Error en su conexión', false, 1000); console.log(e)});
+        }).catch((e) => {
+            this.Alerta('Error en su conexión', false, 1000);
+            console.log(e)
+        });
     };
-    Parametros=(comparar)=>{
+    Parametros = (comparar) => {
         console.log(comparar)
         switch (comparar) {
-            case 'Ventas':{
-                if(this.state.Venta){
+            case 'Ventas': {
+                if (this.state.Venta) {
 
-                }else{
-                    this.ConsultaFechas(this.state.FechaInical,this.state.FechaFinal);
+                } else {
+                    this.ConsultaFechas(this.state.FechaInical, this.state.FechaFinal);
                 }
                 break;
             }
@@ -76,22 +82,23 @@ class Reportes extends Component {
                     ContenedorFinal: <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 row">
                         <div className="col-6">
                             <span>Por rango de fechas de :</span>
-                            <input id='FechaInical'  onChange={this.Cambio} type="date"
+                            <input id='FechaInical' onChange={this.Cambio} type="date"
                                    className="form-control" placeholder="Usuario"/>
                         </div>
 
                         <div className='col-6'>
                             <span> a: </span>
-                            <input id='FechaFinal'  onChange={this.Cambio}
+                            <input id='FechaFinal' onChange={this.Cambio}
                                    type="date" className="form-control" placeholder="dd/mm/aaaa"/>
                         </div>
-                        <div className='col-12 row' style={{marginTop:'2%'}}>
+                        <div className='col-12 row' style={{marginTop: '2%'}}>
                             <span className='col-3'> Venta: </span>
-                            <input  id='Venta' onChange={this.Cambio}
-                                   type="text" className="form-control col-8" placeholder="Id venta" />
+                            <input id='Venta' onChange={this.Cambio}
+                                   type="text" className="form-control col-8" placeholder="Id venta"/>
                         </div>
                         <div className='col-12'>
-                            <button type='button' className='btn-outline-info' onClick={()=>this.Parametros('Ventas')}>
+                            <button type='button' className='btn-outline-info'
+                                    onClick={() => this.Parametros('Ventas')}>
                                 Filtro
                             </button>
                         </div>
@@ -105,21 +112,21 @@ class Reportes extends Component {
         }
     };
 
-    CargarTabla=(Valor)=>{
-        let Encabezado =[];
-        let Valores =[];
-        Object.keys(Valor[0]).forEach((o,index)=>{
+    CargarTabla = (Valor) => {
+        let Encabezado = [];
+        let Valores = [];
+        Object.keys(Valor[0]).forEach((o, index) => {
             Encabezado.push(<td key={index}>{o}</td>)
         });
-        Object.values(Valor).forEach((o,index)=>{
+        Object.values(Valor).forEach((o, index) => {
             let Valor = [];
-            Encabezado.forEach((p,index)=>{
+            Encabezado.forEach((p, index) => {
                 Valor.push(<td key={index}>{o[p.props.children]}</td>)
             });
             Valores.push(<tr key={index}>{Valor}</tr>)
 
         });
-        this.setState({ListaEncabezado:Encabezado,listaFinal:Valores,BooleanTabla:true})
+        this.setState({ListaEncabezado: Encabezado, listaFinal: Valores, BooleanTabla: true})
     };
 
     componentWillMount() {
@@ -129,7 +136,10 @@ class Reportes extends Component {
             } else {
                 this.CargarTabla(e.data['result']);
             }
-        }).catch((e) => {this.Alerta('Error en su conexión', false, 1000); console.log(e)});
+        }).catch((e) => {
+            this.Alerta('Error en su conexión', false, 1000);
+            console.log(e)
+        });
     }
 
     Click = () => {
@@ -163,12 +173,12 @@ class Reportes extends Component {
             <tbody className='grid'>
             {this.state.listaFinal}
             </tbody>
-        </table>:<h1 className='text-center'>Sin Información</h1>;
+        </table> : <h1 className='text-center'>Sin Información</h1>;
         return (
             <div className="reportes">
                 <Alert stack={{limit: 3}}/>
                 <div className="container ">
-                    <div className="row" >
+                    <div className="row">
                         <div className="col-lg-12" id="reporteTitle">
                             <h1>Filtros de reporte</h1>
                         </div>
@@ -176,7 +186,7 @@ class Reportes extends Component {
                     <div className='row'>
 
                         {/*Navegacion*/}
-                        <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style={{marginBottom:'2%'}}>
+                        <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style={{marginBottom: '2%'}}>
                             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                                 <button className="navbar-toggler" type="button" data-toggle="collapse"
                                         data-target="#navbarNav"
@@ -186,10 +196,12 @@ class Reportes extends Component {
                                 <div className="collapse navbar-collapse" id="navbarNav">
                                     <ul className="navbar-nav">
                                         <li name='C1' className="nav-item">
-                                            <label id='C1' onClick={this.CambioStilo} className="nav-link">VENTAS </label>
+                                            <label id='C1' onClick={this.CambioStilo}
+                                                   className="nav-link">VENTAS </label>
                                         </li>
                                         <li name="'C2" className="nav-item">
-                                            <label id='C2' onClick={this.CambioStilo} className="nav-link">SUCRUSAL </label>
+                                            <label id='C2' onClick={this.CambioStilo}
+                                                   className="nav-link">SUCRUSAL </label>
                                         </li>
                                         <li name='C3' className="nav-item">
                                             <label id='C3' onClick={this.CambioStilo}
@@ -211,7 +223,7 @@ class Reportes extends Component {
                                 </div>
                             </nav>
                             {/*Conten*/}
-                            <form style={{marginTop:'2%'}}>
+                            <form style={{marginTop: '2%'}}>
                                 {this.state.ContenedorFinal}
                             </form>
                             {/*Fin Conten*/}
