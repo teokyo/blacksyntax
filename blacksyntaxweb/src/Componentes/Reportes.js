@@ -115,14 +115,16 @@ class Reportes extends Component {
     CargarTabla = (Valor) => {
         let Encabezado = [];
         let Valores = [];
-        Object.keys(Valor[0]).forEach((o, index) => {
-            Encabezado.push(<td key={index}>{o}</td>)
+        console.log(Valor)
+        Object.keys(Valor[0]).forEach((Frase, index) => {
+            Encabezado.push(<td key={index}>{Frase}</td>)
         });
-        Object.values(Valor).forEach((o, index) => {
+        Object.values(Valor).forEach((item, index) => {
             let Valor = [];
-            Encabezado.forEach((p, index) => {
-                Valor.push(<td key={index}>{o[p.props.children]}</td>)
+            Encabezado.forEach((frase, index) => {
+                Valor.push(<td key={index}>{item[frase.props.children]}</td>)
             });
+            console.log(Valor);
             Valores.push(<tr key={index}>{Valor}</tr>)
 
         });
@@ -201,7 +203,7 @@ class Reportes extends Component {
                                         </li>
                                         <li name="'C2" className="nav-item">
                                             <label id='C2' onClick={this.CambioStilo}
-                                                   className="nav-link">SUCRUSAL </label>
+                                                   className="nav-link">SUCURSAL </label>
                                         </li>
                                         <li name='C3' className="nav-item">
                                             <label id='C3' onClick={this.CambioStilo}
