@@ -9,14 +9,13 @@ class Consultas {
         return axios.get('http://localhost:81/blacksyntax/api/sales/venta/'+id,{
             responseType: 'json'
         });
-    }
+    };
     static getVentasRangoFechas=(FechaI,FechaF)=>{
         return axios.post('http://localhost:81/blacksyntax/api/sales',{
             inicio:FechaI,
             final:FechaF
         },{responseType: 'json'});
-
-    }
+    };
 }
 
 export default Consultas;
