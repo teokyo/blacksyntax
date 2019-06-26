@@ -48,10 +48,11 @@ class Reportes extends Component {
     };
     ConsultaFechas = (FI, FF) => {
       let Com =  ReportesA.getTablaFiltroFechas(FI,FF);
-       if(Com != null){
+       if(Com ===1){
+           this.Alerta("Rebice su conexión",false,1000)
+       }else  if(Com != null){
+
            this.CargarTabla(Com);
-       }else  if(Com ===1){
-            this.Alerta("Rebice su conexión",false,1000)
        }else{
           // this.Alerta();
            this.LimpiarTabla();
@@ -100,6 +101,10 @@ class Reportes extends Component {
                         </div>
                     </div>
                 });
+                break;
+            }
+            case 'C2':{
+
                 break;
             }
             default: {
