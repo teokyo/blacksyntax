@@ -29,6 +29,6 @@ class ProductsController extends Controllers{
     function getProductsCat($request, $response){
         $message = $this->ProductsModel->getProductsCat();
         return json_encode( $message );
-
+    }
 }
 ?>
