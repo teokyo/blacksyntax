@@ -5,7 +5,6 @@ class Consultas {
             responseType: 'json'
         });
     }
-
 }
 
 export default Consultas;

@@ -2,36 +2,59 @@
   font-size: 30px;
   color: black;
 }
-.login {
+.login, .login1 {
   z-index: 1000;
   position: absolute;
-  background-color: aquamarine;
-  left: 86%;
+  left: 75.2%;
   visibility: hidden;
+  padding: 70px;
+  border: 2px solid  #452b78;
+  background: #ffffff;
+  margin-top:  100px;
 }
-.login1 {
-  z-index: 1000;
-  position: absolute;
-  background-color: aquamarine;
-  left: 86%;
+ .login1{
   visibility: visible;
 }
 #floatingb {
   z-index: 1001;
   position: absolute;
-  left: 95%;
+  left: 93.5%;
 }
 .bhutonFlotante {
   position: absolute;
-  left: 95%;
+  left: 91.97%;
   z-index: 5000;
 }
 #btnlogin{
     font-size: 20px;
+    background: #452b78;
+    border: 2px solid #452b78;
+    padding: 10px 20px;
+    margin-top: 100px;
+    color: #ffffff;
 }
 
 
-.login span, .login1 span{
-    top: 1%;
-    font-size: 27px;
+.login span.title, .login1 span.title{
+    
+    font-size: 25px;
+}
+.btnstart{
+  background: #452b78;
+  border: 1px solid #452b78;
+  padding: 10px 30px;
+  margin-top: 40px;
+  color: #ffffff;
+}
+span.title{
+  font-weight: normal;
+}
+
+span{
+  font-weight: 500;
+  color: #0f0f0f;
+}
+
+input{
+  border: 1px solid #452b78;
 }

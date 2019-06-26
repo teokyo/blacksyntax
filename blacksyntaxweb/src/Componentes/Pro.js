@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import '../App.css';
-import Buscar from './Buscar.js';
 class Pro extends Component {
 
     state = {};
@@ -20,7 +19,7 @@ class Pro extends Component {
 				<li><a id='Reportes' href='/Reportes'>Reportes</a></li>
                 <li><a id="Login" href="/Login">view</a></li>
 			</ul>
-            <Buscar />
+            
             </nav> 
             </header>
         );

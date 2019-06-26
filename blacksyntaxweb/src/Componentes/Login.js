@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "../css/Login.css";
 
 class Login extends Component {
-  state = { User: "", Password: "", stilo:'login'};
+  state = { User: "", Password: "", stilo:'login', title:'short'};
 
   Cambio = e => {
     const name = e.target.id;
@@ -18,14 +18,20 @@ class Login extends Component {
       this.setState({stilo:'login'})
 
     }
+
+    if(this.state.title === 'short'){
+      this.setState({title:'long'})
+    }else{
+      this.setState({title:'short'})
+    }
   }
   render() {
     return (
       <div>
         <div className={this.state.stilo}>
-        <span>Inicie sesión</span>
+        <span className="title">Inicie sesión</span>
         <form method="post">
-          Correo:
+          <span>Correo:</span>
           <br />
           <input
             id="User"
@@ -34,7 +40,7 @@ class Login extends Component {
             onChange={this.Cambio}
           />
           <br />
-          Contraseña:
+          <span>Contraseña:</span>
           <br />
           <input
             id="Password"
@@ -43,8 +49,8 @@ class Login extends Component {
             onChange={this.Cambio}
           />
           <br />
-          <button type="submit" value="submit">
-            Iniciar Sesión2
+          <button type="submit" value="submit" className="btnstart">
+            Iniciar Sesión
           </button>
         </form>
       </div>
