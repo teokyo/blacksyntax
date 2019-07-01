@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import '../App.css';
 class Pro extends Component {
 
@@ -15,7 +16,7 @@ class Pro extends Component {
             <header className="col-sm-12 col-md-12 col-lg-12 header d-flex flex-row justify-content-end align-items-center trans_200">
             <nav className="col-sm-12 col-md-12 col-lg-12 main_nav justify-self-end text-right">
 			<ul>
-				<li className="active"><a id='/' href='/' >Home</a></li>
+				<li className=""><a id='/' href='/' >Home</a></li>
 				<li><a id='Reportes' href='/Reportes'>Reportes</a></li>
                 <li><a id="Login" href="/Login">view</a></li>
 			</ul>
@@ -28,3 +29,4 @@ class Pro extends Component {
 }
 
 export default Pro;
+

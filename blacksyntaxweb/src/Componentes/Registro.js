@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "../css/Login.css";
 
-class Login extends Component {
+class Registro extends Component {
   state = { User: "", Password: "", stilo: 'login', btntitle: 'bhutonFlotante' };
 
   Cambio = e => {
@@ -28,8 +28,7 @@ class Login extends Component {
     return (
       <div>
         <div className={this.state.stilo}>
-          {/*<span className="title">Inicie sesión</span>*/}
-          <i className="fas fa-user"></i>
+          <i className="fas fa-user-plus"></i>
           <form method="post">
 
             <span>Correo:</span>
@@ -67,4 +66,4 @@ class Login extends Component {
     );
   }
 }
-export default Login;
+export default Registro;

@@ -5,11 +5,11 @@
 .login, .login1 {
   z-index: 1000;
   position: absolute;
-  left: 75.2%;
+  left: 70.5%;
   visibility: hidden;
-  padding: 70px;
-  border: 2px solid  #452b78;
-  background: #ffffff;
+  padding:40px 55px 40px;
+  border: 1px solid   #452b78;
+  background:#ffffff;
   margin-top:  100px;
 }
  .login1{
@@ -36,25 +36,36 @@
 
 
 .login span.title, .login1 span.title{
-    
     font-size: 25px;
 }
 .btnstart{
   background: #452b78;
-  border: 1px solid #452b78;
+  border: 1px solid #ffffff;
   padding: 10px 30px;
-  margin-top: 40px;
+  margin-top: 0px;
   color: #ffffff;
-}
-span.title{
-  font-weight: normal;
 }
 
 span{
-  font-weight: 500;
-  color: #0f0f0f;
+  font-weight: 450;
+  font-size: 18px;
 }
 
-input{
-  border: 1px solid #452b78;
+.login1 input{
+text-align: center;
+}
+
+button.long{
+font-size: 70px;
+}
+
+.login1 i{
+  font-size: 50px;
+  color: #444444;
+}
+
+.signin{
+  background: #ffffff;
+  border: #ffffff;
+  margin-top: 10px;
 }
