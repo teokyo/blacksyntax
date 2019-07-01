@@ -261,6 +261,10 @@ class Reportes extends Component {
                 });
                 break;
             }
+            case 'C2':{
+
+                break;
+            }
             default: {
                 this.setState({ ContenedorFinal: null });
             }
