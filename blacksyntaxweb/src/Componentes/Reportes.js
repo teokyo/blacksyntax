@@ -53,15 +53,18 @@ class Reportes extends Component {
             });
     };
     ConsultaFechas = (FI, FF, CF) => {
-        let Com = ReportesA.getTablaFiltroFechas(FI, FF, CF); //Com es lo que devuelve filtro fecha y revisa inconvenientes en el envío de datos 1
-        if (Com != null) {
-            this.CargarTabla(Com);
-        } else if (Com === 1) {
-            this.Alerta("Revice su conexión", false, 1000);
-        } else {
-            // this.Alerta();
-            this.LimpiarTabla();
-        }
+        ReportesA.getTablaFiltroFechas(FI, FF, CF).then(e=>{
+            let Com = e;
+            if (Com != null) {
+                this.CargarTabla(Com);
+            } else if (Com === 1) {
+                this.Alerta("Revice su conexión", false, 1000);
+            } else {
+                // this.Alerta();
+                this.LimpiarTabla();
+            }
+        }); //Com es lo que devuelve filtro fecha y revisa inconvenientes en el envío de datos 1
+
     };
     Parametros = comparar => {
         console.log(comparar);
@@ -153,7 +156,7 @@ class Reportes extends Component {
                             </div>
                         </div>
                     ),
-                    Sucursales: ReportesA.getOpciones()
+                  // Sucursales: ReportesA.getOpciones()
                 });
                 break;
             }
@@ -165,7 +168,7 @@ class Reportes extends Component {
                                 <span>Id Producto:</span>
                                 <input
                                     id="idProducto"
-                                    onChange=""
+                                    onChange={this.Cambio}
                                     type="text"
                                     className="form-control"
                                     placeholder="Id Prodcuto"
@@ -193,7 +196,7 @@ class Reportes extends Component {
                                 <span>Promoción:</span>
                                 <input
                                     id="idPromocion"
-                                    onChange=""
+                                    onChange={this.Cambio}
                                     type="text"
                                     className="form-control"
                                     placeholder="Id Promoción"
@@ -203,7 +206,7 @@ class Reportes extends Component {
                                 <span>Promoción en laboratorio:</span>
                                 <input
                                     id="idPromocionLab"
-                                    onChange=""
+                                    onChange={this.Cambio}
                                     type="text"
                                     className="form-control"
                                     placeholder="Id Laboratorio"
@@ -231,7 +234,7 @@ class Reportes extends Component {
                                 <span>Por sucursal:</span>
                                 <input
                                     id="idSucursalEmp"
-                                    onChange=""
+                                    onChange={this.Cambio}
                                     type="text"
                                     className="form-control"
                                     placeholder="Id Sucursal"
@@ -253,16 +256,9 @@ class Reportes extends Component {
             }
             case "C6": {
                 this.setState({
-                    ContenedorFinal: (
-                        <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 row">
-                            <span />
-                        </div>
-                    )
+                    ContenedorFinal: null
                 });
-                break;
-            }
-            case 'C2':{
-
+                this.CargarTabla([]);
                 break;
             }
             default: {
