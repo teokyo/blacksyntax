@@ -18,5 +18,10 @@ class ProductsController extends Controllers{
         $message = $this->ProductsModel->insertproduct($temp);
         return json_encode($message);
     }
+
+    function getProductsCat($request, $response){
+        $message = $this->ProductsModel->getProductsCat();
+        return json_encode( $message );
+    }
 }
 ?>
