@@ -36,7 +36,8 @@ class ReportesA {
     static getTablaFiltroFechas(FI, FF, CF) {//agregar parametro con switch case para decidir de donde entra la información (ventas,empleados etc) 
         switch (CF) {
             case 'Ventas': {
-                return Consultas.getVentasRangoFechas(FI, FF).then(e => {
+                let promises = [];
+                promises.push(Consultas.getVentasRangoFechas(FI, FF).then(e => {
                     if (e.data.notFound) {
                         console.log("fail in index")
                         return null;
@@ -49,6 +50,9 @@ class ReportesA {
                 }).catch((e) => {
                     return 1;
                     console.log(e)
+                }));
+                return Promise.all(promises).then(values => {
+                    return values[0];
                 });
                 break;
             }
