@@ -24,7 +24,7 @@ class Reportes extends Component {
         if (value !== "") {
             if (name === "Venta") {
                 this.Consulta(value);
-            }
+            }if (name === ""){}
         } else {
             this.TablaInicial();
         }
@@ -55,11 +55,15 @@ class Reportes extends Component {
     ConsultaFechas = (FI, FF, CF) => {
         let Com = ReportesA.getTablaFiltroFechas(FI, FF, CF); //Com es lo que devuelve filtro fecha y revisa inconvenientes en el envío de datos 1
         if (Com != null) {
+            console.log("what's happ here")
+            console.log(Com)
             this.CargarTabla(Com);
         } else if (Com === 1) {
             this.Alerta("Revice su conexión", false, 1000);
         } else {
             // this.Alerta();
+            console.log("problems")
+            console.log(Com)
             this.LimpiarTabla();
         }
     };

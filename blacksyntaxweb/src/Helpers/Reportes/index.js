@@ -24,9 +24,9 @@ class ReportesA {
 
     static getOpciones = (Opt) =>{
     let options = [];
-        Opt.forEach((item,index)=>{
+        Object.values(Opt).forEach((item,index)=>{
             console.log(item);
-            options.push({"value":item.id,"label":item.ciudad});
+            options.push({"value":item.id,"label":index.ciudad});
         });
         return options;
     };
@@ -36,13 +36,15 @@ class ReportesA {
     static getTablaFiltroFechas(FI, FF, CF) {//agregar parametro con switch case para decidir de donde entra la información (ventas,empleados etc) 
         switch (CF) {
             case 'Ventas': {
-                Consultas.getVentasRangoFechas(FI, FF).then(e => {
+                return Consultas.getVentasRangoFechas(FI, FF).then(e => {
                     if (e.data.notFound) {
+                        console.log("fail in index")
                         return null;
                     } else {
                         console.log(e.data)
+                        console.log("Until here evth goes well")
 
-                        return e.data['result']
+                        return e.data['result'];
                     }
                 }).catch((e) => {
                     return 1;
@@ -51,45 +53,54 @@ class ReportesA {
                 break;
             }
             case 'Sucusal': {
-                Consultas.getSucursalesBy().then( e => {
+                return Consultas.getSucursalesBy().then( e => {
                     if(e.data.notFound){
+                        console.log("fail in index sucursal")
                         return null;
                     }else{
-                        return e.data['result']
+                        return e.data['result'];
                     }
                 }).catch((e) => {
-                    return;
+                    return 1;
                 });
                 break;
             }
             case 'Productos': {
-                Consultas.getProductoCode().then(e => {
+                return Consultas.getProductoCode().then(e => {
                     if (e.data.notFound) {
                         return null;
                     } else {
-                        return e.data['result']
+                        return e.data['result'];
                     }
                 }).catch((e) => {
                     return 1;
                 });
                 break;
             }
-            case 'Promociones': {
+            /*case 'Promociones': {
+                
+                
+                return null;
+                console.log("Taken")
                 break;
-            }
+            }*/
             case 'Empleados': {
-                Consultas.getEmpleadosPorSucursal().then(e => {
+                return Consultas.getEmpleadosPorSucursal().then(e => {
                     if (e.data.notFound) {
                         return null;
                     } else {
-                        return e.data['result']
+                        return e.data['result'];
                     }
                 }).catch((e) => {
                     return 1;
                 });
                 break;
+            }
+            default :{
+                console.log("defaul case is used");
             }
         }
+        
         return null;
     }
 }
