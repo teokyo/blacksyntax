@@ -16,15 +16,21 @@ class Consultas {
             final: FechaF
         }, { responseType: 'json' });
     };
-    ///Prp
+    
     static getProductoCode = (code) => {
         return axios.get('http://cuernavaca.xyz/products/code/' + code, {
             responseType: 'json'
         });
     };
 
-    static getPrombyId = (id) => {
+    static getPrombyIdLab = (id) => {
         return axios.get('http://cuernavaca.xyz/promotions/lab/' + id, {
+            responseType: 'json'
+        });
+    }
+
+    static getPrombyId = (id) => {
+        return axios.get('http://cuernavaca.xyz/promotions/pro/' + id, {
             responseType: 'json'
         });
     }
@@ -36,6 +42,12 @@ class Consultas {
     }
     static getSucursalesBy = () => {
         return axios.get('http://cuernavaca.xyz/',{
+            responseType: 'json'
+        });
+    }
+
+    static getDoctores = () => {
+        return axios.get("http://cuernavaca.xyz/doctors",{
             responseType: 'json'
         });
     }

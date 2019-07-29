@@ -21,10 +21,17 @@ class Reportes extends Component {
     Cambio = e => {
         const name = e.target.id;
         const value = e.target.value;
+        console.log(value);
         if (value !== "") {
             if (name === "Venta") {
                 this.Consulta(value);
-            }if (name === ""){}
+            }if (name === "idProducto"){
+                this.ConsultarProductos(value);
+            }if(name === "idPromocion"){
+                this.ConsultarPromocion(value);
+            }if(name === "idPromocionLab"){
+                this.ConsultarPromocionLab(value);
+            }
         } else {
             this.TablaInicial();
         }
@@ -52,10 +59,51 @@ class Reportes extends Component {
                 console.log(e);
             });
     };
+    ConsultarProductos = d =>{
+        Consultas.getProductoCode(d).then(e => {
+            if(e.data.notFound){
+                this.Alerta("Datos Vacios", false, 1000);
+                this.LimpiarTabla();
+            }else{
+                this.CargarTabla(e.data["result"]);
+            }
+        }).catch(e => {
+            this.Alerta("Error en su conexión", false, 1000);
+            console.log(e);
+        });
+    }
+    ConsultarPromocionLab = p => {
+        Consultas.getPrombyIdLab(p).then(e => {
+        if(e.data.notFound){
+            this.Alerta("Datos Vacios", false, 1000);
+            this.LimpiarTabla();
+        }else{
+            this.CargarTabla(e.data["result"]);
+        }
+    }).catch(e => {
+        this.Alerta("Error en su conexión", false, 1000);
+        console.log(e);
+    });
+    }
+    ConsultarPromocion = p => {
+        Consultas.getPrombyId(p).then(e => {
+        if(e.data.notFound){
+            this.Alerta("Datos Vacios", false, 1000);
+            this.LimpiarTabla();
+        }else{
+            this.CargarTabla(e.data["result"]);
+        }
+    }).catch(e => {
+        this.Alerta("Error en su conexión", false, 1000);
+        console.log(e);
+    });
+    }
+
     ConsultaFechas = (FI, FF, CF) => {
         ReportesA.getTablaFiltroFechas(FI, FF, CF).then(e=>{
             let Com = e;
             if (Com != null) {
+                console.log("it works")
                 this.CargarTabla(Com);
             } else if (Com === 1) {
                 this.Alerta("Revice su conexión", false, 1000);
@@ -175,13 +223,13 @@ class Reportes extends Component {
                                 />
                             </div>
                             <div className="col-12">
-                                <button
+                                {/*<button
                                     type="button"
                                     className="btn btn-outline-info"
                                     onClick={() => this.Parametros("Productos")}
                                 >
                                     Filtro
-                </button>
+                                </button>*/}
                             </div>
                         </div>
                     )
@@ -212,7 +260,7 @@ class Reportes extends Component {
                                     placeholder="Id Laboratorio"
                                 />
                             </div>
-                            <div className="col-12">
+                            {/*<div className="col-12">
                                 <button
                                     type="button"
                                     className="btn btn-outline-info"
@@ -220,7 +268,7 @@ class Reportes extends Component {
                                 >
                                     Filtro
                 </button>
-                            </div>
+                    </div>*/}
                         </div>
                     )
                 });
@@ -258,7 +306,7 @@ class Reportes extends Component {
                 this.setState({
                     ContenedorFinal: null
                 });
-                this.CargarTabla([]);
+                //this.CargarTabla([]);
                 break;
             }
             default: {
