@@ -306,7 +306,7 @@ class Reportes extends Component {
                 this.setState({
                     ContenedorFinal: null
                 });
-                //this.CargarTabla([]);
+                this.Doctores();
                 break;
             }
             default: {
@@ -336,6 +336,19 @@ class Reportes extends Component {
                 console.log(e);
             });
     };
+    Doctores = () => {
+        Consultas.getDoctores()
+        .then(e => {
+            if (e.data.notFound) {
+                this.Alerta("Datos Vacios", false, 1000);
+            } else {
+                this.CargarTabla(e.data["result"]);
+            }
+        }).catch(e => {
+            this.Alerta("Error en su conexión", false, 1000);
+            console.log(e);
+        });
+    }
     componentWillMount() {
         this.TablaInicial();
     }
