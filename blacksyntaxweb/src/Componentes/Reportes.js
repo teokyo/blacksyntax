@@ -182,6 +182,7 @@ class Reportes extends Component {
                 break;
             }
             case "C2": {
+                this.Sucursales();
                 this.setState({
                     ContenedorFinal: (
                         <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 row">
@@ -349,6 +350,19 @@ class Reportes extends Component {
             console.log(e);
         });
     }
+    Sucursales = () =>{
+        Consultas.getSucursales()
+        .then(e => {
+            if (e.data.notFound) {
+                this.Alerta("Datos Vacios", false, 1000);
+            } else {
+                this.CargarTabla(e.data["result"]);
+            }
+        }).catch(e => {
+            this.Alerta("Error en su conexión", false, 1000);
+            console.log(e);
+        });
+    }
     componentWillMount() {
         this.TablaInicial();
     }
@@ -480,7 +494,7 @@ class Reportes extends Component {
                         </div>
                         {/*fin Navegacion*/}
                         <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                            {Tabla}
+                            <div style={{overflow:"auto"}}>{Tabla}</div>
                         </div>
                     </div>
                 </div>

@@ -56,7 +56,7 @@ class ReportesA {
                 });
                 break;
             }
-            case 'Sucusal': {
+            /*case 'Sucusal': {
                 return Consultas.getSucursalesBy().then( e => {
                     if(e.data.notFound){
                         console.log("fail in index sucursal")
@@ -88,7 +88,7 @@ class ReportesA {
                 console.log("Taken")
                 break;
             }*/
-            case 'Empleados': {
+            /*case 'Empleados': {
                 return Consultas.getEmpleadosPorSucursal().then(e => {
                     if (e.data.notFound) {
                         return null;
@@ -99,7 +99,7 @@ class ReportesA {
                     return 1;
                 });
                 break;
-            }
+            }*/
             default :{
                 console.log("defaul case is used");
             }

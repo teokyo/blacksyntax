@@ -40,8 +40,8 @@ class Consultas {
             responseType: 'json'
         });
     }
-    static getSucursalesBy = () => {
-        return axios.get('http://cuernavaca.xyz/',{
+    static getSucursales= () => {
+        return axios.get('http://cuernavaca.xyz/branches',{
             responseType: 'json'
         });
     }
