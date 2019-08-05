@@ -1,10 +1,12 @@
 <?php
+
 namespace app\Controllers;
+
 class ProductsController extends Controllers{
+
     function getProducts($request, $response){
         // var_dump('controller');die();
         $message = $this->ProductsModel->getProducts();
-
         return json_encode( $message );
         //return json_encode( array(['data'=>'Si llega']) );
     }
@@ -30,5 +32,21 @@ class ProductsController extends Controllers{
         $message = $this->ProductsModel->getProductsCat();
         return json_encode( $message );
     }
+
+    function getMoreSelledProducts($request, $response){
+        $message = $this->ProductsModel->getMoreSelledProducts();
+        return json_encode( $message );
+    }
+
+    function getMoreSelledProduct($request, $response){
+        $message = $this->ProductsModel->getMoreSelledProduct();
+        return json_encode( $message );
+    }
+
+    function getExpiredProducts($request, $response){
+        $message = $this->ProductsModel->getExpiredProducts();
+        return json_encode( $message );
+    }
 }
+
 ?>
