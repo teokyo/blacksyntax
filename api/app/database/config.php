@@ -4,7 +4,7 @@
         'database_name'=>'far',
         'server'=>'localhost',
         'username'=>'root',
-        'password'=>'',
+        'password'=>'prax2314',
         'charset'=>'utf8',
         'port'=>'3306'
     )
