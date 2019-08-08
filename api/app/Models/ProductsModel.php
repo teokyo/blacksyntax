@@ -18,7 +18,7 @@
 
                 if(!is_null($data[$i]->error()[1])){
                     return array('error'=>true,'description'=>$data[$i]->error()[2]);
-                }else if(empty($result)){
+                }else if(empty($result[$i])){
                     return array('notFound'=>true,'description'=>'The result is empty');
                 }
 //                print_r($result[$i]);
@@ -45,7 +45,7 @@
 
            if(!is_null($data[$i]->error()[1])){
                return array('error'=>true,'description'=>$this->$data[$i]->error()[2]);
-           }else if(empty($result)){
+           }else if(empty($result[$i])){
                return array('notFound'=>true,'description'=>'The result is empty');
         }
            }

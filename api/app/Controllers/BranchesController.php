@@ -11,11 +11,5 @@ class BranchesController extends Controllers{
         //return json_encode( array(['data'=>'Si llega']) );
     }
 
-    /*function getBranchesByFilters($request, $response){
-        $temp = $request->getParsedBody();
-        $message = $this->BranchesModel->getBranchesByFilters($temp);
-        return json_encode( $message );
-    }*/
-
 }
 ?>
