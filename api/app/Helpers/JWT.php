@@ -15,21 +15,16 @@ class JWT
         $dat['iat'] = time();
         $dat['exp'] = time() + (60 * 60 * 1);
         $dat['sub'] = $user_id;
-        print_r($dat);
         return $jwt->encode($dat,'gLX6KGrU8P');
     }
 
     public function decode($encodedJwt)
     {
         try{
-            //code
-            
-            $decodedJwt = $decodedJwt = new \Firebase\JWT\JWT();
-            print_r($encodedJwt);
-            $decoded = $decodedJwt->decode($encodedJwt, 'gLX6KGrU8P');
-            
-            //var_dump($decodedJwt->sub->email); die();
-            return ($decodedJwt->verify('gLX6KGrU8P') ? $decodedJwt->sub : null);
+            $jwt = $jwt = new \Firebase\JWT\JWT();
+            $decodedJwt = $jwt->decode($encodedJwt, 'gLX6KGrU8P', array('HS256'));
+            //print_r($decodedJwt);
+            return($decodedJwt);
         } catch (\Exception $eJwtE){
             // var_dump($message); die();
             return null;

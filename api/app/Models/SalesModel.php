@@ -9,11 +9,11 @@
         for ($i = 0; $i < count($data); $i++){
 //              print_r('entro');
             $result[$i]  = $data[$i]->query(
-            "SELECT <A.id_venta> as 'No. Venta', <A.numero_productos> as 'Cantidad de productos', <A.fecha_venta> as Fecha, b.nombre_desc as Sucursal, <b.rfc> as RFC_Sucursal, d.nombre as Nombre_Empleado,  d.apellidoPaterno as Apellido_Paterno, d.apellidoMaterno as Apellido_Materno
+            "SELECT <A.id_venta> as 'No. Venta', <A.numero_productos> as 'Cantidad de productos', <A.fecha_venta> as Fecha, <b.nombre_desc> as Sucursal, <b.rfc> as RFC_Sucursal, d.nombre as Nombre_Empleado,  d.apellidoPaterno as Apellido_Paterno, d.apellidoMaterno as Apellido_Materno
              from 
              ventas A
-             join sucursales B on b.id_sucursal = a.id_sucursal
-             join empleado c on c.id_empleado = a.id_empleado
+             join sucursales b on b.id_sucursal = A.id_sucursal
+             join empleado c on c.id_empleado = A.id_empleado
              join persona d on d.id_persona = c.id_persona order by A.fecha_venta desc"
                
             )->fetchAll(\PDO::FETCH_ASSOC);
@@ -23,7 +23,7 @@
             }else if(empty($result)){
                 return array('notFound'=>true,'description'=>'The result is empty');
             }}
-            return array('success'=>true, 'desciption'=>'The sales were found','result'=>array_merge($result[0]));
+            return array('success'=>true, 'desciption'=>'The sales were found','result'=>array_merge($result[0], $result[1],$result[2]));
         
         }
 
@@ -54,7 +54,7 @@
             }else if(empty($result)){
                 return array('notFound'=>true,'description'=>'The result is empty');
             }}
-            return array('success'=>true, 'desciption'=>'The sales were found','result'=>array_merge($result[0]));
+            return array('success'=>true, 'desciption'=>'The sales were found','result'=>array_merge($result[0], $result[1]));
         
         }
 
@@ -80,7 +80,7 @@
             }else if(empty($result)){
                 return array('notFound'=>true,'description'=>'The result is empty');
             }}
-            return array('success'=>true, 'desciption'=>'The sales were found','result'=>array_merge($result[0]));
+            return array('success'=>true, 'desciption'=>'The sales were found','result'=>array_merge($result[0], $result[1]));
         
         }
 
@@ -109,7 +109,7 @@
             }else if(empty($result)){
                 return array('notFound'=>true,'description'=>'The result is empty');
             }}
-            return array('success'=>true, 'desciption'=>'The sales were found','result'=>array_merge($result[0]));
+            return array('success'=>true, 'desciption'=>'The sales were found','result'=>array_merge($result[0], $result[1]));
         
         }
     }

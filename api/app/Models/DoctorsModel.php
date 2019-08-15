@@ -25,7 +25,7 @@
             }else if(empty($result)){
                 return array('notFound'=>true,'description'=>'The result is empty');
             }}
-            return array('success'=>true, 'description'=>'The admins were found','result'=>array_merge($result[0]));
+            return array('success'=>true, 'description'=>'The admins were found','result'=>array_merge($result[0],$result[1],$result[2]));
         
         }
     }

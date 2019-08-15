@@ -12,6 +12,12 @@
             }
         }
 
+        /*public function __post($property){
+            if($this->container->{$property}){
+                return $this->container->{$property};
+            }
+        }*/
+
         public function getObject($params){
             return (object)params;
         }
