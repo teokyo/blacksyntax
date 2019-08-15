@@ -1,0 +1,84 @@
+#CajaMenu{
+    background-color: #301b55;
+    height: 2%;
+}
+a#En {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: calc(10px + 2vmin);
+}
+li{
+    text-align: start;
+    list-style: none;
+    cursor: pointer;
+    margin: 1%;
+}
+.ToggleOff{
+    visibility: hidden;
+    display: none;
+    cursor: pointer;
+}
+.lnr {
+    color: #FFFFFF;
+    font-size: 2rem;
+}
+@media screen and (orientation: landscape) {
+
+    @media screen and (max-width: 768px) {
+      .ToggleOff{
+          visibility: visible;
+          display: block;
+      }
+      .hiddenP{
+          display: none;
+      }
+    }
+
+    @media screen and (max-width: 992px) {
+        .ToggleOff{
+            visibility: visible;
+            display: block;
+        }
+        .hiddenP{
+            display: none;
+        }
+
+    }
+
+    @media screen and (max-width: 1200px) {
+
+
+
+    }
+}
+
+
+@media screen and (orientation: portrait) {
+
+    @media screen and (max-width: 768px) {
+        .ToggleOff{
+            visibility: visible;
+            display: block;
+        }
+        .hiddenP{
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 992px) {
+        .ToggleOff{
+            visibility: visible;
+            display: block;
+        }
+        .hiddenP{
+            display: none;
+        }
+
+    }
+
+    @media screen and (max-width: 1200px) {
+
+
+
+    }
+}

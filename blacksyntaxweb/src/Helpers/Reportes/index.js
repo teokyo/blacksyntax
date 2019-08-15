@@ -1,7 +1,7 @@
 import React from "react";
 import Consultas from "../Consultas";
 class ReportesA {
-    static getEncabezado = (valor) => {
+    /*static getEncabezado = (valor) => {
         let Encabezado = [];
         // console.log(valor);
         Object.keys(valor[0]).forEach((Frase, index) => {
@@ -20,7 +20,61 @@ class ReportesA {
             Valores.push(<tr key={index}>{Valor}</tr>);
         });
         return Valores;
+    };*/
+
+    static getEncabezado=(valor,NoEntrar=[],json={})=>{
+        let Encabezado = [];
+        if(valor.length !== 0){
+            Object.keys(valor[0]).forEach((Frase, index) => {
+                if(Object.values(json).length){
+                    const CambiCom = this.Cambio(Frase,json);
+                    if(CambiCom === undefined){
+                        if(this.EncabezadoValido(Frase,NoEntrar)=== undefined){
+                            Encabezado.push(<td key={index}>{Frase}</td>);
+                        }
+                    }else{
+                        if (this.EncabezadoValido(Frase, NoEntrar) === undefined) {
+                            Encabezado.push(<td key={index}>{json[CambiCom]}</td>);
+                        }
+                    }
+                }else{
+                    if(this.EncabezadoValido(Frase,NoEntrar)=== undefined){
+                        Encabezado.push(<td key={index}>{Frase}</td>);
+                    }
+                }
+            });
+            return Encabezado.sort();
+        }else{
+            return [];
+        }
     };
+
+    static  Cambio =(Valor,Cambio)=>{
+        return Object.keys(Cambio).find(e=>e === Valor);
+    }
+    static EncabezadoValido=(Valor,Evitar=[])=>{
+        return  Evitar.find(Value=>Value===Valor);
+    }
+
+    static getTablaDianmica=(Array,NoEntrar=[],json={},Funtion=null)=>{
+        let Valores=[];
+        Object.values(Array).forEach((item, index) => {
+            let Valor = [];
+            this.getEncabezado(Array,NoEntrar).forEach((frase, index) => {
+                if(frase.props.children === 'Estado'){
+                    Valor.push(<td key={index}>{item[frase.props.children]  ? 'Activo':'Inactivo'}</td>);
+                }else{
+                    Valor.push(<td key={index}>{item[frase.props.children]}</td>);
+                }
+            });
+            //   console.log(Valor);
+            //Valores.push(<tr onClick={()=>Funtion(item)} key={index}>{Valor}</tr>);
+            Valores.push(<tr  key={index}>{Valor}</tr>);
+        });
+        return Valores;
+    };
+
+
 
     static getOpciones = (Opt) =>{
     let options = [];

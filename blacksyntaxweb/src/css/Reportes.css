@@ -47,3 +47,25 @@ body{
 .grid {
     max-width: 200px;
 }
+
+.mtop20{
+    margin-top: 20px;
+}
+
+
+.prodbtn{
+    padding-top: 28px;
+right: 20px;
+}
+
+.btnproduct{
+    margin-left: 20px;
+}
+
+.btnscont{
+    text-align: center;
+}
+
+#topm{
+    margin-top: 20px;
+}

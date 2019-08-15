@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
+import '../css/principal.css';
 
 class Newsletter extends Component {
 
@@ -8,33 +9,50 @@ class Newsletter extends Component {
         this.state = {};
     }
 
-    render(){
-        return(
+    render() {
+        return (
             <div className="newsletter">{/* Newsletter */}
                 <div className="container">
                     <div className="row">
                         <div className="col text-lg-center text-left">
                             <div className="newsletter_content">
-        
+
                                 {/* Newsletter Title */}
-                                <div className="newsletter_title">
+                                {/*<div className="newsletter_title">
                                     <h1>Suscribete</h1>
                                     <span>Para obtener información adicional.</span>
                                 </div>
                                 
-                                {/* Newsletter Form */}
-                                <div className="newsletter_form_container">
-                                    <form action="/hola">
-                                        <div className="input-group">
-                                            <input type="email" className="newsletter_email" placeholder="Your e-mail address here" required="required" data-error="Valid email address is required."/>
-                                            <button id="newsletter_form_submit" type="submit" className="button newsletter_submit_button trans_200" value="Submit">
-                                                Enviar
-                                            </button>
-                                        </div>
-                                            
-                                    </form>
+                                
+                                                                    <ul id="mediacontainer" className="social">
+                                        <li>
+                                            <a href="/hola">
+                                                <i id="ficon" className="fab fa-facebook-f" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/hola">
+                                                <i id="ticon" className="fab fa-twitter" />
+                                            </a>
+                                        </li>
+                                    </ul>
+                                */}
+
+
+
+                                <div className="logo footer_logo">
+                                    <a href="#">
+                                        Black<span className="footerSpan">Syntax</span>
+                                    </a>
                                 </div>
-        
+                                <div className="col-sm-12 col-md-12 col-lg-12">
+                                <a href="/hola">
+                                                <i id="ficon" className="fab fa-facebook-f" />
+                                            </a>
+                                            <a href="/hola">
+                                                <i id="ticon" className="fab fa-twitter" />
+                                            </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -43,4 +61,4 @@ class Newsletter extends Component {
         );
     }
 }
-    export default Newsletter;
+export default Newsletter;

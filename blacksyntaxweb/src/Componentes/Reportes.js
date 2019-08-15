@@ -18,6 +18,15 @@ class Reportes extends Component {
         BooleanTabla: false
     };
 
+    componentDidMount() {
+        if(window.localStorage.getItem("token")===undefined){
+        this.props.history.push("/");
+        window.location.reload();
+        }
+        console.log('Si entro a')
+    }
+
+
     Cambio = e => {
         const name = e.target.id;
         const value = e.target.value;
@@ -25,11 +34,11 @@ class Reportes extends Component {
         if (value !== "") {
             if (name === "Venta") {
                 this.Consulta(value);
-            }if (name === "idProducto"){
+            } if (name === "idProducto") {
                 this.ConsultarProductos(value);
-            }if(name === "idPromocion"){
+            } if (name === "idPromocion") {
                 this.ConsultarPromocion(value);
-            }if(name === "idPromocionLab"){
+            } if (name === "idPromocionLab") {
                 this.ConsultarPromocionLab(value);
             }
         } else {
@@ -51,7 +60,9 @@ class Reportes extends Component {
                     this.Alerta("Datos Vacios", false, 1000);
                     this.LimpiarTabla();
                 } else {
-                    this.CargarTabla(e.data["result"]);
+                    let avoid=[]
+                    let change={ID_PRODUCTO:'Id Producto'};
+                    this.CargarTabla(e.data["result"], avoid, change);
                 }
             })
             .catch(e => {
@@ -59,52 +70,192 @@ class Reportes extends Component {
                 console.log(e);
             });
     };
-    ConsultarProductos = d =>{
+    ConsultarProductos = d => {
         Consultas.getProductoCode(d).then(e => {
-            if(e.data.notFound){
+            if (e.data.notFound) {
                 this.Alerta("Datos Vacios", false, 1000);
                 this.LimpiarTabla();
-            }else{
-                this.CargarTabla(e.data["result"]);
+            } else {
+                let avoid = [];
+                let change = {
+                    RFC_Sucursal: "RFC", Nombre_Empleado: "Nombre Empleado",
+                    Apellido_Paterno: "Apellido Paterno", Apellido_Materno: "Apellido Materno"
+                }
+                this.CargarTabla(e.data["result"], avoid, change);
             }
         }).catch(e => {
             this.Alerta("Error en su conexión", false, 1000);
             console.log(e);
         });
     }
+    ConsultarTodosLosProductos = () => {
+        Consultas.getProductos.then(e => {
+            if (e.data.notFound) {
+                this.Alerta("Datos Vacios", false, 1000);
+                this.LimpiarTabla();
+            } else {
+                let avoid = [];
+                let change = {}
+                this.CargarTabla(e.data["result"], avoid, change);
+            }
+        }).catch(e => {
+            this.Alerta("Error en su conexión", false, 1000);
+            console.log(e);
+        });
+    }
+
+    ConsultarProdIEPS = () => {
+        Consultas.getProductoIEPS.then(e => {
+            if (e.data.notFound) {
+                this.Alerta("Datos Vacios", false, 1000);
+                this.LimpiarTabla();
+            } else {
+                let avoid = [];
+                let change = {}
+                this.CargarTabla(e.data["result"], avoid, change);
+            }
+        }).catch(e => {
+            this.Alerta("Error en su conexión", false, 1000);
+            console.log(e);
+        });
+
+    }
+
+    ConsultarDiezMasVendidos = () => {
+        Consultas.getDiezMasVendidos.then(e => {
+            if (e.data.notFound) {
+                this.Alerta("Datos Vacios", false, 1000);
+                this.LimpiarTabla();
+            } else {
+                let avoid = [];
+                let change = {};
+                this.CargarTabla(e.data["result"], avoid, change);
+            }
+        }).catch(e => {
+            this.Alerta("Error en su conexión", false, 1000);
+            console.log(e);
+        });
+    }
+
+    ConsultarMasVendido = () =>{
+        Consultas.getMasVendido.then(e => {
+            if (e.data.notFound) {
+                this.Alerta("Datos Vacios", false, 1000);
+                this.LimpiarTabla();
+            } else {
+                let avoid = [];
+                let change = {}
+                this.CargarTabla(e.data["result"], avoid, change);
+            }
+        }).catch(e => {
+            this.Alerta("Error en su conexión", false, 1000);
+            console.log(e);
+        });
+    }
+
+    ConsultarCaducados = () =>{
+        Consultas.getCaducados.then(e => {
+            if (e.data.notFound) {
+                this.Alerta("Datos Vacios", false, 1000);
+                this.LimpiarTabla();
+            } else {
+                let avoid = [];
+                let change = {}
+                this.CargarTabla(e.data["result"], avoid, change);
+            }
+        }).catch(e => {
+            this.Alerta("Error en su conexión", false, 1000);
+            console.log(e);
+        });
+    }
+
+
     ConsultarPromocionLab = p => {
         Consultas.getPrombyIdLab(p).then(e => {
-        if(e.data.notFound){
-            this.Alerta("Datos Vacios", false, 1000);
-            this.LimpiarTabla();
-        }else{
-            this.CargarTabla(e.data["result"]);
-        }
-    }).catch(e => {
-        this.Alerta("Error en su conexión", false, 1000);
-        console.log(e);
-    });
+            if (e.data.notFound) {
+                this.Alerta("Datos Vacios", false, 1000);
+                this.LimpiarTabla();
+            } else {
+                let avoid = ['aplica_descuento', 'aplica_precio_fijo', 'status', 'permitir_devoluciones'];
+                let change = {id_promocion:'Id Promocion', desc_promocion:'Descuento Promoción',
+                fecha_inicial:'Fecha Inicial', fecha_final:'Fecha Final', tipo_filtro:'Tipo Filtro',
+                clave_familia_med:'Clave Familia Médica', 
+                clave_clasificacion_essa:'Clave Clasificacion ESSA', id_laboratorio:'Id Laboratorio',
+                descuento:'Descuento', fecha_actualizacion:'Fecha Actualizacion',
+                agotar_existencias:'Agotar Existencias'};                
+                this.CargarTabla(e.data["result"], avoid, change);
+            }
+        }).catch(e => {
+            this.Alerta("Error en su conexión", false, 1000);
+            console.log(e);
+        });
     }
     ConsultarPromocion = p => {
         Consultas.getPrombyId(p).then(e => {
-        if(e.data.notFound){
-            this.Alerta("Datos Vacios", false, 1000);
-            this.LimpiarTabla();
-        }else{
-            this.CargarTabla(e.data["result"]);
-        }
-    }).catch(e => {
-        this.Alerta("Error en su conexión", false, 1000);
-        console.log(e);
-    });
+            if (e.data.notFound) {
+                this.Alerta("Datos Vacios", false, 1000);
+                this.LimpiarTabla();
+            } else {
+                let avoid = ['aplica_descuento', 'aplica_precio_fijo', 'status', 'permitir_devoluciones'];
+                let change = {id_promocion:'Id Promocion', desc_promocion:'Descuento Promoción',
+                fecha_inicial:'Fecha Inicial', fecha_final:'Fecha Final', tipo_filtro:'Tipo Filtro',
+                clave_familia_med:'Clave Familia Médica', 
+                clave_clasificacion_essa:'Clave Clasificacion ESSA', id_laboratorio:'Id Laboratorio',
+                descuento:'Descuento', fecha_actualizacion:'Fecha Actualizacion',
+                agotar_existencias:'Agotar Existencias'};                
+                this.CargarTabla(e.data["result"], avoid, change);
+            }
+        }).catch(e => {
+            this.Alerta("Error en su conexión", false, 1000);
+            console.log(e);
+        });
+    };
+
+    ConsultarPromociones = pr => {
+        Consultas.getProm().then(e => {
+            if (e.data.notFound) {
+                this.Alerta("Datos Vacios", false, 1000);
+                this.LimpiarTabla();
+            } else {
+                let avoid = ['aplica_descuento', 'aplica_precio_fijo', 'status', 'permitir_devoluciones'];
+                let change = {id_promocion:'Id Promocion', desc_promocion:'Descuento Promoción',
+                fecha_inicial:'Fecha Inicial', fecha_final:'Fecha Final', tipo_filtro:'Tipo Filtro',
+                clave_familia_med:'Clave Familia Médica', 
+                clave_clasificacion_essa:'Clave Clasificacion ESSA', id_laboratorio:'Id Laboratorio',
+                descuento:'Descuento', fecha_actualizacion:'Fecha Actualizacion',
+                agotar_existencias:'Agotar Existencias'};
+                this.CargarTabla(e.data["result"], avoid, change);
+            }
+        }).catch(e => {
+            this.Alerta("Error en su conexión", false, 1000);
+            console.log(e);
+        });
+    }
+
+    ConsultarEmpleados = () => {
+        Consultas.getEmpleados().then(e => {
+            if (e.data.notFound) {
+                this.Alerta("Datos Vacios", false, 1000);
+                this.LimpiarTabla();
+            } else {
+                let avoid = [];
+                let change = {};
+                this.CargarTabla(e.data["result"], avoid, change);
+            }
+        }).catch(e => {
+            this.Alerta("Error en su conexión", false, 1000);
+            console.log(e);
+        });
     }
 
     ConsultaFechas = (FI, FF, CF) => {
-        ReportesA.getTablaFiltroFechas(FI, FF, CF).then(e=>{
+        ReportesA.getTablaFiltroFechas(FI, FF, CF).then(e => {
             let Com = e;
             if (Com != null) {
                 console.log("it works")
-                this.CargarTabla(Com);
+                let avoid = [];
+                let change = {};
+                this.CargarTabla(Com, avoid, change);
             } else if (Com === 1) {
                 this.Alerta("Revice su conexión", false, 1000);
             } else {
@@ -124,9 +275,10 @@ class Reportes extends Component {
         ); //Ingresa a la consulta por fechas
     };
 
-    CambioSucursal = (selectedOption) =>{
-        this.setState({Sucursal:selectedOption});
+    CambioSucursal = (selectedOption) => {
+        this.setState({ Sucursal: selectedOption });
     }
+
 
     CambioStilo = e => {
         const id = e.target.id;
@@ -157,8 +309,17 @@ class Reportes extends Component {
                                     placeholder="dd/mm/aaaa"
                                 />
                             </div>
+                            <div className="col-12">
+                                <button
+                                    type="button"
+                                    className="mtop20 btn btn-outline-info"
+                                    onClick={() => this.Parametros("Ventas")}
+                                >
+                                    Filtrar
+                                </button>
+                            </div>
                             <div className="col-12 row" style={{ marginTop: "2%" }}>
-                                <span className="col-3"> Venta: </span>
+                                <span className="col-3"> Por id de venta: </span>
                                 <input
                                     id="Venta"
                                     onChange={this.Cambio}
@@ -167,18 +328,10 @@ class Reportes extends Component {
                                     placeholder="Id venta"
                                 />
                             </div>
-                            <div className="col-12">
-                                <button
-                                    type="button"
-                                    className="btn btn-outline-info"
-                                    onClick={() => this.Parametros("Ventas")}
-                                >
-                                    Filtro
-                </button>
-                            </div>
                         </div>
                     )
                 });
+                this.TablaInicial();
                 break;
             }
             case "C2": {
@@ -186,7 +339,7 @@ class Reportes extends Component {
                 this.setState({
                     ContenedorFinal: (
                         <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 row">
-                            <div className="col-8">
+                            {/*<div className="col-8">
                                 <span></span>
                             <Select
                                 value={this.state.Sucursal}
@@ -202,10 +355,10 @@ class Reportes extends Component {
                                 >
                                     Filtro
                 </button>
-                            </div>
+                            </div>*/}
                         </div>
                     ),
-                  // Sucursales: ReportesA.getOpciones()
+                    // Sucursales: ReportesA.getOpciones()
                 });
                 break;
             }
@@ -223,18 +376,43 @@ class Reportes extends Component {
                                     placeholder="Id Prodcuto"
                                 />
                             </div>
-                            <div className="col-12">
-                                {/*<button
+                            <div className="prodbtn col-6 col-md-6 col-lg-6">
+                                <button
+                                    type="button"
+                                    className="btnproduct btn btn-outline-info"
+                                    onClick={() => this.ConsultarProdIEPS}
+                                >
+                                    Filtrar por IEPS
+                                </button>
+                                <button
+                                
                                     type="button"
                                     className="btn btn-outline-info"
-                                    onClick={() => this.Parametros("Productos")}
+                                    onClick={() => this.ConsultarProdIEPS}
                                 >
-                                    Filtro
-                                </button>*/}
+                                    Mostrar 10 más vendidos
+                                </button>
+                            </div>
+                            <div className=" btnscont col-12 col-md-12 col-lg-6">
+                            <button
+                                    type="button"
+                                    className="btnproduct btn btn-outline-info"
+                                    onClick={() => this.ConsultarProdIEPS}
+                                >
+                                    Mostrar el más vendido
+                                </button>
+                                <button
+                                    type="button"
+                                    className="btnproduct btn btn-outline-info"
+                                    onClick={() => this.ConsultarProdIEPS}
+                                >
+                                    Mostrar caducados
+                                </button>
                             </div>
                         </div>
                     )
                 });
+                this.ConsultarProductos();
                 break;
             }
             case "C4": {
@@ -273,6 +451,7 @@ class Reportes extends Component {
                         </div>
                     )
                 });
+                this.ConsultarPromociones();
                 break;
             }
             case "C5": {
@@ -290,17 +469,18 @@ class Reportes extends Component {
                                 />
                             </div>
                             <div className="col-12">
-                                <button
+                                {/*<button
                                     type="button"
-                                    className="btn btn-outline-info"
+                                    className="mtop20 btn btn-outline-info"
                                     onClick={() => this.Parametros("Empleados")}
                                 >
                                     Filtro
-                </button>
+                                </button>*/}
                             </div>
                         </div>
                     )
                 });
+                this.ConsultarEmpleados();
                 break;
             }
             case "C6": {
@@ -316,10 +496,10 @@ class Reportes extends Component {
         }
     };
 
-    CargarTabla = Valor => {
+    CargarTabla = (Valor, NoEntrar = [], Cambio = {}) => {
         this.setState({
-            ListaEncabezado: ReportesA.getEncabezado(Valor),
-            listaFinal: ReportesA.getTablaDianmica(Valor),
+            ListaEncabezado: ReportesA.getEncabezado(Valor, NoEntrar, Cambio),
+            listaFinal: ReportesA.getTablaDianmica(Valor, NoEntrar, Cambio),
             BooleanTabla: true
         });
     };
@@ -329,7 +509,9 @@ class Reportes extends Component {
                 if (e.data.notFound) {
                     this.Alerta("Datos Vacios", false, 1000);
                 } else {
-                    this.CargarTabla(e.data["result"]);
+                    this.CargarTabla(e.data["result"],
+                        ['RFC_Sucursal'],
+                        { 'Apellido_Materno': 'Materno', Apellido_Paterno: 'Paterno', 'Nombre_Empleado': 'Nombre', 'Cantidad de productos': 'Cantidad' });
                 }
             })
             .catch(e => {
@@ -339,30 +521,47 @@ class Reportes extends Component {
     };
     Doctores = () => {
         Consultas.getDoctores()
-        .then(e => {
-            if (e.data.notFound) {
-                this.Alerta("Datos Vacios", false, 1000);
-            } else {
-                this.CargarTabla(e.data["result"]);
-            }
-        }).catch(e => {
-            this.Alerta("Error en su conexión", false, 1000);
-            console.log(e);
-        });
-    }
-    Sucursales = () =>{
+            .then(e => {
+                if (e.data.notFound) {
+                    this.Alerta("Datos Vacios", false, 1000);
+                } else {
+                    let avoid=[];
+                    let change={NOMBRE_DOC:'Nombre', SEG_NOMBRE_DOC:'Segundo Nombre',
+                    APELLIDO_PAT_DOC:'Apellido Paterno', APELLIDO_MAT_DOC:'Apellido Materno',
+                    ID_SUCURSAL:'Id Sucursal', COLONIA:'Colonia', MUNICIPIO:'Municipio', 
+                    ESTADO:'Estado', 	CIUDAD:'Ciudad'};
+                    this.CargarTabla(e.data["result"], avoid, change);
+                }
+            }).catch(e => {
+                this.Alerta("Error en su conexión", false, 1000);
+                console.log(e);
+            });
+    };
+    Sucursales = () => {
         Consultas.getSucursales()
-        .then(e => {
-            if (e.data.notFound) {
-                this.Alerta("Datos Vacios", false, 1000);
-            } else {
-                this.CargarTabla(e.data["result"]);
-            }
-        }).catch(e => {
-            this.Alerta("Error en su conexión", false, 1000);
-            console.log(e);
-        });
-    }
+            .then(e => {
+                if (e.data.notFound) {
+                    this.Alerta("Datos Vacios", false, 1000);
+                } else {
+                    let avoid=['hora_apertura', 'hora_cirre', 'codigoCentroCosto'];
+                    let change={id_sucursal:'Id Sucursal', clasificacion:'Clasificación', 
+                    nombre_desc:'nombre desc', registroSAA:'registro SAA',
+                    cedulaProfesional:'Cédula Profesional', medico_id:'Id Médico',
+                    especialidad:'Especialidad', rfc:'RFC', direccion:'Dirección',
+                    colonia:'Colonia', estado:'Estado', municipio:'Municipio', 
+                    ciudad:'Ciudad', codigoPostal:'Código Postal', telefono:'Telefono',
+                    encargado:'Encargado', cantidad_empleados:'Cantidad Eempleados', 
+                    almacen:'Almacen', almacen_medicamentos:'Almacen Medicamentos', 
+                    noExterior:'No. Exterior', noInterior:'No. Interior', 
+                    numEstablecimiento:'Número Establecimiento'};
+                    this.CargarTabla(e.data["result"], avoid, change);
+                }
+            }).catch(e => {
+                this.Alerta("Error en su conexión", false, 1000);
+                console.log(e);
+            });
+    };
+
     componentWillMount() {
         this.TablaInicial();
     }
@@ -494,7 +693,7 @@ class Reportes extends Component {
                         </div>
                         {/*fin Navegacion*/}
                         <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                            <div style={{overflow:"auto"}}>{Tabla}</div>
+                            <div style={{ overflow: "auto" }}>{Tabla}</div>
                         </div>
                     </div>
                 </div>

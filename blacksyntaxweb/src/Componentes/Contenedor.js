@@ -7,21 +7,23 @@ import Newsletter from './Newsletter';
 import Footer from './Footer';
 import IconBoxes from './IconBoxes';
 import Home from "./Home";
+import Login from './Login';
+
 class Contenedor extends Component {
 
     render(){
         return(
-            <div>
-
-                <Home/>
+            <>
+                <Login/>
+                <Home className="col-12"/>
                 <IconBoxes/>
                 <VerticalSliderSection/>
                 <Services/>
-                <SliderSection/>
-                <Features/>
+                {/*<SliderSection/>
+                <Features/>*/}
                 <Newsletter/>
-                <Footer/>
-            </div>
+        {/*<Footer/>*/}
+            </>
         );
     }
 }

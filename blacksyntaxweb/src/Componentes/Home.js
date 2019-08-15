@@ -101,7 +101,7 @@ class Home extends Component {
                         <i className="fab fa-chevron-down trans_200"></i>
                     </div>
                 </div>
-                <Login/>
+                {/*<Login/>*/}
             </div>
         );
     }

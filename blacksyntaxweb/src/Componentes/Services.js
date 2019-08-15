@@ -37,7 +37,7 @@ class Services extends Component {
     render(){
         const ListaSlider = this.state.ListaFinalItem;
         return(
-            <div style={{width:'100%', overflow:'hidden', marginLeft:'auto',marginRight:'auto'}} className="services">{/* Services */}
+            <div style={{width:'100%', overflow:'hidden', marginLeft:'auto',marginRight:'auto', paddingTop:'0px'}} className="services">{/* Services */}
                 <div className="container">
                     <div className="row">
                         <div className="col-sm-12 text-center">

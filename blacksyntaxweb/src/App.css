@@ -1,3 +1,12 @@
+body{
+  height: 100%;
+  width: 100%;
+}
+html{
+  height: 100%;
+  width: 100%;
+}
+
 .App {
   text-align: center;
 }
@@ -30,4 +39,15 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+@media screen and  (max-width: 1000px) {
+    .hero_side_text_container{
+      visibility: hidden;
+    }
+  .next_section_scroll{
+    visibility: hidden;
+  }
+
 }

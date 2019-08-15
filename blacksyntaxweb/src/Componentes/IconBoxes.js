@@ -10,7 +10,7 @@ class IconBoxes extends Component {
 
     render(){
         return(
-            <div className="icon_boxes">{/* Icon Boxes */}
+            <div className="icon_boxes" style={{paddingBottom:'0px'}}>{/* Icon Boxes */}
                 <div className="container">
                     <div className="row">
                         <div className="col-sm-12  col-lg-4">
@@ -28,14 +28,14 @@ class IconBoxes extends Component {
                             </div>
         
                             {/* Icon Box Item */}
-                            <div className="col-sm-12 col-lg-12 icon_box_item">
+                            {/*<div className="col-sm-12 col-lg-12 icon_box_item">
                                 <h2>valores</h2>
                                 <ul>
                                     <li>responsabilidad</li>
                                     <li>Honestidad</li>
                                     <li>Ética profecional</li>
                                 </ul>
-                            </div>
+                            </div>*/}
         
                         </div>
         
@@ -48,10 +48,10 @@ class IconBoxes extends Component {
                             </div>
 
                             {/* Icon Box Item */}
-                            <div className="col-sm-12  col-lg-12 icon_box_item">
+  {/*}                          <div className="col-sm-12  col-lg-12 icon_box_item">
                                 <h2>Uso</h2>
                                 <p>Etiam euismod sapien nec est tempus consequat. Nullam eget pretium mi. Curabitur rhoncus finibus quam quis sodales.</p>
-        </div>
+        </div>*/}
                             
                         </div>
                     </div>

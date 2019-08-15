@@ -2,9 +2,9 @@
     return array(
         'database_type'=>'mysql',
         'database_name'=>'far',
-        'server'=>'localhost',
-        'username'=>'root',
-        'password'=>'prax2314',
+        'server'=>'http://cuernavaca.xyz',
+        'username'=>'pacheco',
+        'password'=>'pacheco123',
         'charset'=>'utf8',
         'port'=>'3306'
     )

@@ -1,0 +1,32 @@
+.footerSpan{
+    font-size: 28px;
+}
+
+.footer_social{
+    display: inline-block;
+}
+
+.social{
+    display: inline-block;
+    text-align: center;
+}
+
+.social:hover{
+    color: aqua;
+}
+
+#ticon, #ficon{
+    font-size: 25px;
+    color: darkgray;
+    margin:10px;
+}
+
+#ticon:hover, #ficon:hover{
+    color: #ffffff;
+    
+}
+
+#mediacontainer{
+    display: inline-block;
+    text-align: center;
+}
