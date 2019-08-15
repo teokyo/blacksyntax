@@ -31,4 +31,8 @@
     $container['EmployeesModel'] = function($container){
         return new app\Models\EmployeesModel($container);
     };
+    
+    $container['UserAuthModel'] = function($container){
+        return new app\Models\UserAuthModel($container);
+    };
 ?>

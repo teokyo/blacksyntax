@@ -1,7 +1,7 @@
 <?php
-    require $contexto_app.'\vendor\autoload.php';
+    require $contexto_app.'/vendor/autoload.php';
     //agregar las configuraciones de la palicacion 
-    $settings = require $contexto_app.'\app\settings.php';
+    $settings = require $contexto_app.'/app/settings.php';
     if($env == 'production'){
         $settings['determineRouteBeforeAppMiddleware'] = false;
     }

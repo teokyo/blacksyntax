@@ -12,6 +12,7 @@ class SalesController extends Controllers{
     
     function getSalesByDate($request, $response){
         $temp = $request->getParsedBody();
+        //print_r($temp);
         $message = $this->SalesModel->getSalesByDate($temp);
         return json_encode( $message );
     }

@@ -31,4 +31,8 @@
     $container['EmployeesController'] = function($container){
         return new app\Controllers\EmployeesController($container);
     };
+
+    $container['AutUserController'] = function($container){
+        return new app\Controllers\AutUserController($container);
+    };
 ?>
